@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Takondwa Jean Kaulendo — Web Developer</title>
+  <title>Takondwa Jean Kaulendo — PHP Web Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -26,7 +26,7 @@
   <!-- NAV -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Takondwa Jean</a>
+      <a class="navbar-brand fw-bold" href="#">MY PORTFOLIO</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,7 +45,7 @@
   <header class="hero">
     <div class="container">
       <h1>Takondwa Jean Kaulendo</h1>
-      <p class="lead lead-tag">Web Developer</p>
+      <p class="lead lead-tag">PHP Web Developer</p>
       <p class="mx-auto" style="max-width:700px">I build responsive, accessible websites and web applications with a focus on clean code and practical solutions.</p>
       <a href="#projects" class="btn btn-accent btn-lg mt-3">View Projects</a>
     </div>
@@ -56,15 +56,15 @@
     <div class="row align-items-center">
       <div class="col-md-4 text-center mb-4 mb-md-0">
         <div style="width:220px;height:220px;background:#eef;display:inline-block;border-radius:8px;overflow:hidden;">
-          <!-- replace with your photo -->
-          <img src="images/profile.jpg" alt="Takondwa Jean" style="width:100%;height:100%;object-fit:cover">
+          <img src="Takondwa/images/profile.jpg" alt="Takondwa Jean" style="width:100%;height:100%;object-fit:cover">
         </div>
       </div>
       <div class="col-md-8">
         <h2 class="section-title">About Me</h2>
-        <p><!-- EDIT THIS PARAGRAPH --></p>
-        <p class="mb-0">I am an ICT graduate from Mzuzu University, experienced building both front-end and back-end solutions. I enjoy turning requirements into clean, maintainable web interfaces and simple admin systems.</p>
-      </div>
+      <p><strong>Takondwa J. Kaulendo</strong> – Lilongwe, Malawi.</p>
+      <p>I am a motivated ICT graduate from Mzuzu University with hands-on experience in web development, network support, and IT systems management. I enjoy building responsive websites and solving technical challenges efficiently.</p>
+      <p>I have gained practical experience at C-Tech Systems Ltd and Old Mutual Malawi, assisting in web projects, system administration, and end-user support. I bring strong communication, teamwork, and problem-solving skills to every project.</p>
+   </div>
     </div>
   </section>
 
@@ -82,66 +82,173 @@
         <span class="skill-pill">GitHub</span>
         <span class="skill-pill">VS Code</span>
         <span class="skill-pill">XAMPP</span>
+        <span class="skill-pill">Wordpress</span>
       </div>
-      <p class="text-center text-muted">Front-end: HTML, CSS, JavaScript, Bootstrap — Back-end: PHP, MySQL — Tools: GitHub, VS Code, XAMPP</p>
-    </div>
+      <ul class="text-center text-muted" style="list-style:none; padding:0; margin:0; text-align:center;">
+          <li><strong>1. Front-end:</strong> HTML, CSS, JavaScript, Bootstrap</li>
+          <li><strong>2. Back-end:</strong> PHP, MySQL</li>
+          <li><strong>3. Tools:</strong> GitHub, VS Code, XAMPP, WordPress</li>
+      </ul>
+
+
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="container my-5">
-    <h3 class="section-title text-center">Selected Projects</h3>
-    <div class="row g-4">
+ <!-- PROJECTS -->
+<section id="projects" class="container my-5">
+  <h3 class="section-title text-center">My Projects</h3>
+  <div class="row g-4">
 
-      <!-- Project 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card project-card h-100 shadow-sm">
-          <img src="images/bloomher.jpg" alt="BloomHer project">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">BloomHer</h5>
-            <p class="card-text">A website for an organization that inspires and empowers young girls through education and lifestyle programs. Includes an admin section for uploading content and a public side where visitors can apply as volunteers and contact the organization.</p>
-            <p class="mt-auto mb-0"><strong>Tech:</strong> PHP, MySQL, HTML, CSS, Bootstrap</p>
-            <div class="mt-3">
-              <a href="#" class="btn btn-sm btn-outline-primary">View Code</a>
-              <a href="#" class="btn btn-sm btn-outline-secondary">Live Demo</a>
-            </div>
+    <!-- Project 1 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card project-card h-100 shadow-sm">
+        <img src="images/bloomher.png" alt="BloomHer project">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title"><strong>BloomHer Website</strong></h5>
+          <p class="card-text">A responsive website designed to empower and inspire young girls through education and lifestyle programs. It features an admin panel for managing content, and a visitor site where users can view programs, apply as volunteers, and contact the organization.</p>
+          <p class="mt-auto mb-0"><strong>Tech:</strong> PHP, MySQL, HTML, CSS, Bootstrap</p>
+          <div class="mt-3">
+            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#bloomherModal">View Screenshots</button>
           </div>
         </div>
       </div>
-
-      <!-- Project 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card project-card h-100 shadow-sm">
-          <img src="images/dodma.jpg" alt="Disaster Management project">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Disaster Management System (DoDMA)</h5>
-            <p class="card-text">An inventory and survey system to support disaster response. Field users collect household-level data so affected families receive appropriate help and items; includes inventory management for distributed supplies.</p>
-            <p class="mt-auto mb-0"><strong>Tech:</strong> PHP, MySQL, Bootstrap, Data collection modules</p>
-            <div class="mt-3">
-              <a href="#" class="btn btn-sm btn-outline-primary">View Code</a>
-              <a href="#" class="btn btn-sm btn-outline-secondary">Project Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3 (property management) -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card project-card h-100 shadow-sm">
-          <img src="images/property.jpg" alt="Property Management">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Property Management System</h5>
-            <p class="card-text">A Python-based web application to manage property listings, tenants, and rent payments. Features include property listing pages, tenant management, and simple reporting for landlords.</p>
-            <p class="mt-auto mb-0"><strong>Tech:</strong> Python (Flask/Django), HTML, CSS, MySQL</p>
-            <div class="mt-3">
-              <a href="#" class="btn btn-sm btn-outline-primary">View Code</a>
-              <a href="#" class="btn btn-sm btn-outline-secondary">Live Demo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </section>
+
+    <!-- Project 2 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card project-card h-100 shadow-sm">
+        <img src="images/dodma.png" alt="Disaster Management project">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title"><strong>Disaster Management System (DoDMA)</strong></h5>
+          <p class="card-text">A data-driven system built to support disaster response operations. It helps field teams collect household-level data, track affected families, and manage inventory distribution efficiently.</p>
+          <p class="mt-auto mb-0"><strong>Tech:</strong> PHP, MySQL, HTML, CSS, Bootstrap</p>
+          <div class="mt-3">
+            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#dodmaModal">View Screenshots</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card project-card h-100 shadow-sm">
+        <img src="images/property.png" alt="Property Management">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title"><strong>Asset Management System</strong></h5>
+          <p class="card-text">A web application that enables users to add procured items, allocate them to departments, and allows departmental personnel to assign assets to individual staff members for accountability and tracking.</p>
+          <p class="mt-auto mb-0"><strong>Tech:</strong> PHP, MySQL, HTML, CSS</p>
+          <div class="mt-3">
+            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#propertyModal">View Screenshots</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Project 4 -->
+  <div class="col-md-6 col-lg-4 mt-4">
+    <div class="card project-card h-100 shadow-sm">
+      <img src="images/resort.png" alt="Tak&Tad Resort">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title"><strong>Tak&Tad Resort Website</strong></h5>
+        <p class="card-text">A dynamic WordPress website designed to showcase a resort’s services and facilities. It features a gallery, contact form, and an engaging layout to enhance visitor experience and attract customers.</p>
+        <p class="mt-auto mb-0"><strong>Tech:</strong> WordPress, HTML, CSS, MySQL</p>
+        <div class="mt-3">
+          <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#resortModal">View Screenshots</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- MODALS -->
+  <!-- BloomHer Modal -->
+  <div class="modal fade" id="bloomherModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">BloomHer Screenshots</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-2">
+            <div class="col-4"><img src="images/bloomher1.png" class="img-fluid rounded" alt="BloomHer 1"></div>
+            <div class="col-4"><img src="images/bloomher2.png" class="img-fluid rounded" alt="BloomHer 2"></div>
+            <div class="col-4"><img src="images/bloomher3.png" class="img-fluid rounded" alt="BloomHer 3"></div>
+            <div class="col-4"><img src="images/bloomher4.png" class="img-fluid rounded" alt="BloomHer 4"></div>
+            <div class="col-4"><img src="images/bloomher5.png" class="img-fluid rounded" alt="BloomHer 5"></div>
+            <div class="col-4"><img src="images/bloomher6.png" class="img-fluid rounded" alt="BloomHer 6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DoDMA Modal -->
+  <div class="modal fade" id="dodmaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">DoDMA Screenshots</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-2">
+            <div class="col-4"><img src="images/dodma1.png" class="img-fluid rounded" alt="DoDMA 1"></div>
+            <div class="col-4"><img src="images/dodma2.png" class="img-fluid rounded" alt="DoDMA 2"></div>
+            <div class="col-4"><img src="images/dodma3.png" class="img-fluid rounded" alt="DoDMA 3"></div>
+            <div class="col-4"><img src="images/dodma4.png" class="img-fluid rounded" alt="DoDMA 4"></div>
+            <div class="col-4"><img src="images/dodma5.png" class="img-fluid rounded" alt="DoDMA 5"></div>
+            <div class="col-4"><img src="images/dodma6.png" class="img-fluid rounded" alt="DoDMA 6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Management Modal -->
+  <div class="modal fade" id="propertyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Asset Management Screenshots</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-2">
+            <div class="col-4"><img src="images/property1.png" class="img-fluid rounded" alt="Property 1"></div>
+            <div class="col-4"><img src="images/property2.png" class="img-fluid rounded" alt="Property 2"></div>
+            <div class="col-4"><img src="images/property3.png" class="img-fluid rounded" alt="Property 3"></div>
+            <div class="col-4"><img src="images/property4.png" class="img-fluid rounded" alt="Property 4"></div>
+            <div class="col-4"><img src="images/property5.png" class="img-fluid rounded" alt="Property 5"></div>
+            <div class="col-4"><img src="images/property6.png" class="img-fluid rounded" alt="Property 6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Tak&Tad Resort Modal -->
+  <div class="modal fade" id="resortModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tak&Tad Resort Screenshots</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-2">
+            <div class="col-4"><img src="images/resort1.png" class="img-fluid rounded" alt="Resort 1"></div>
+            <div class="col-4"><img src="images/resort2.png" class="img-fluid rounded" alt="Resort 2"></div>
+            <div class="col-4"><img src="images/resort3.png" class="img-fluid rounded" alt="Resort 3"></div>
+            <div class="col-4"><img src="images/resort4.png" class="img-fluid rounded" alt="Resort 4"></div>
+            <div class="col-4"><img src="images/resort5.png" class="img-fluid rounded" alt="Resort 5"></div>
+            <div class="col-4"><img src="images/resort6.png" class="img-fluid rounded" alt="Resort 6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <!-- CONTACT -->
 <section id="contact" class="bg-dark text-white py-5">
   <div class="container">
@@ -160,13 +267,11 @@
   </div>
 </section>
 
+
   <footer class="text-center text-muted">
     <div class="container py-3">© <span id="year"></span> Takondwa Jean Kaulendo — Built with care.</div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>
-
