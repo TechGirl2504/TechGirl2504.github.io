@@ -1,19 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="description" content="Portfolio of Takondwa Jean Kaulendo - ICT Graduate, Web Developer and IT Professional.">
 
     <title>Takondwa Jean Kaulendo | Portfolio</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- GLightbox CSS -->
+    <!-- GLightbox -->
     <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 
     <style>
@@ -51,7 +53,8 @@
             text-decoration: none;
         }
 
-        /* NAVIGATION */
+        /* ================= NAVIGATION ================= */
+
         .navbar {
             background: rgba(255,255,255,0.97);
             box-shadow: 0 3px 18px rgba(77,23,44,0.07);
@@ -71,7 +74,7 @@
         .nav-link {
             color: var(--text);
             font-weight: 600;
-            margin-left: 13px;
+            margin-left: 12px;
             transition: 0.3s;
         }
 
@@ -79,58 +82,132 @@
             color: var(--burgundy);
         }
 
-        /* HERO */
+        .navbar-toggler {
+            border-color: var(--pink);
+        }
+
+        /* ================= HERO BANNER ================= */
+
         .hero {
-            min-height: 90vh;
+            min-height: 92vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(120deg, #fff1f5, #fff7f9 55%, #f4dce5);
-            padding: 110px 0 75px;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 75px;
+
+            background:
+                radial-gradient(circle at 80% 45%,
+                rgba(233,185,201,0.28), transparent 35%),
+                linear-gradient(115deg,
+                #4d172c 0%, #70263f 48%, #9b536d 100%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            top: -180px;
+            left: -120px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.04);
+            bottom: -170px;
+            right: 20%;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
+            color: white;
             font-size: clamp(38px, 6vw, 65px);
             line-height: 1.15;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .hero h1 span {
-            color: var(--burgundy);
+            color: #f3c5d4;
         }
 
         .hero-subtitle {
-            color: var(--burgundy);
-            font-size: 19px;
+            color: #f3c5d4;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 18px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
         }
 
         .hero-description {
-            color: var(--muted);
+            color: rgba(255,255,255,0.85);
             font-size: 17px;
             max-width: 600px;
             margin-bottom: 30px;
         }
 
-        .profile-frame {
-            width: 330px;
-            height: 390px;
-            max-width: 100%;
+        /* SINGLE BLENDED PROFILE IMAGE */
+
+        .hero-photo {
+            position: relative;
+            width: 100%;
+            max-width: 470px;
+            height: 500px;
             margin: auto;
-            border: 9px solid white;
-            border-radius: 48% 48% 25px 25px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(77,23,44,0.15);
-            background: var(--pink);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
         }
 
-        .profile-frame img {
+        .hero-photo::before {
+            content: "";
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            max-width: 90%;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #e9b9c9, #fff1f5);
+            bottom: 25px;
+            right: 5%;
+            opacity: 0.9;
+        }
+
+        .hero-photo img {
+            position: relative;
+            z-index: 1;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center bottom;
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.18));
+
+            -webkit-mask-image: linear-gradient(
+                to right,
+                transparent 0%,
+                black 22%,
+                black 100%
+            );
+
+            mask-image: linear-gradient(
+                to right,
+                transparent 0%,
+                black 22%,
+                black 100%
+            );
         }
 
-        /* BUTTONS */
+        /* ================= BUTTONS ================= */
+
         .btn-custom {
             display: inline-block;
             background: var(--burgundy);
@@ -164,7 +241,62 @@
             color: white;
         }
 
-        /* GENERAL SECTIONS */
+        .hero .btn-custom {
+            background: white;
+            color: var(--dark-burgundy);
+            border-color: white;
+        }
+
+        .hero .btn-custom:hover {
+            background: var(--light-pink);
+            border-color: var(--light-pink);
+            color: var(--dark-burgundy);
+        }
+
+        .hero .btn-outline-custom {
+            color: white;
+            border-color: rgba(255,255,255,0.8);
+        }
+
+        .hero .btn-outline-custom:hover {
+            background: white;
+            color: var(--dark-burgundy);
+        }
+
+        /* ================= SOCIAL LINKS ================= */
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 42px;
+            height: 42px;
+            margin-right: 8px;
+            border-radius: 50%;
+            background: white;
+            color: var(--burgundy);
+            font-size: 19px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--burgundy);
+            color: white;
+        }
+
+        .hero .social-links a {
+            background: rgba(255,255,255,0.13);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero .social-links a:hover {
+            background: white;
+            color: var(--burgundy);
+        }
+
+        /* ================= GENERAL SECTIONS ================= */
+
         section {
             padding: 85px 0;
             scroll-margin-top: 75px;
@@ -192,7 +324,8 @@
             border-radius: 10px;
         }
 
-        /* ABOUT */
+        /* ================= ABOUT ================= */
+
         .about-card,
         .service-card,
         .skill-card,
@@ -217,7 +350,8 @@
             font-weight: 700;
         }
 
-        /* SERVICES */
+        /* ================= SERVICES ================= */
+
         .services-section,
         .skills-section,
         .experience-section {
@@ -254,7 +388,8 @@
             margin-bottom: 0;
         }
 
-        /* SKILLS */
+        /* ================= SKILLS ================= */
+
         .skill-card {
             padding: 25px;
             height: 100%;
@@ -276,7 +411,8 @@
             margin: 4px;
         }
 
-        /* PROJECTS */
+        /* ================= PROJECTS ================= */
+
         .project-card {
             height: 100%;
             overflow: hidden;
@@ -306,18 +442,6 @@
 
         .project-card:hover .project-image img {
             transform: scale(1.04);
-        }
-
-        .project-placeholder {
-            color: var(--burgundy);
-            text-align: center;
-            padding: 25px;
-        }
-
-        .project-placeholder i {
-            font-size: 48px;
-            display: block;
-            margin-bottom: 10px;
         }
 
         .project-content {
@@ -364,7 +488,58 @@
             color: white;
         }
 
-        /* PROJECT GALLERY MODALS */
+        /* ================= HOSTED PROJECTS ================= */
+
+        .hosted-section {
+            background: white;
+        }
+
+        .hosted-card {
+            height: 100%;
+            padding: 28px;
+            background: var(--soft-white);
+            border: 1px solid #f0d3dd;
+            border-radius: 16px;
+            transition: 0.3s ease;
+        }
+
+        .hosted-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(77,23,44,0.10);
+            border-color: var(--pink);
+        }
+
+        .hosted-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-pink);
+            color: var(--burgundy);
+            font-size: 25px;
+            border-radius: 14px;
+            margin-bottom: 18px;
+        }
+
+        .hosted-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .hosted-link {
+            display: inline-block;
+            color: var(--burgundy);
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .hosted-link:hover {
+            color: var(--dark-burgundy);
+        }
+
+        /* ================= GALLERY MODALS ================= */
+
         .gallery-modal .modal-content {
             border: none;
             border-radius: 16px;
@@ -406,7 +581,8 @@
             box-shadow: 0 5px 15px rgba(77,23,44,0.15);
         }
 
-        /* EXPERIENCE */
+        /* ================= EXPERIENCE ================= */
+
         .experience-card {
             padding: 28px;
             margin-bottom: 22px;
@@ -424,7 +600,8 @@
             color: var(--muted);
         }
 
-        /* EDUCATION */
+        /* ================= EDUCATION ================= */
+
         .education-card {
             background: white;
             padding: 30px;
@@ -433,7 +610,8 @@
             box-shadow: 0 7px 25px rgba(77,23,44,0.07);
         }
 
-        /* CONTACT */
+        /* ================= CONTACT ================= */
+
         .contact-section {
             background: linear-gradient(120deg, var(--light-pink), var(--soft-white));
         }
@@ -461,27 +639,8 @@
             font-weight: 600;
         }
 
-        /* SOCIAL LINKS */
-        .social-links a {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 42px;
-            height: 42px;
-            margin-right: 8px;
-            border-radius: 50%;
-            background: white;
-            color: var(--burgundy);
-            font-size: 19px;
-            transition: 0.3s;
-        }
+        /* ================= FOOTER ================= */
 
-        .social-links a:hover {
-            background: var(--burgundy);
-            color: white;
-        }
-
-        /* FOOTER */
         footer {
             background: var(--dark-burgundy);
             color: white;
@@ -494,10 +653,14 @@
             font-size: 14px;
         }
 
-        /* MOBILE */
+        /* ================= RESPONSIVE DESIGN ================= */
+
         @media (max-width: 768px) {
+
             .hero {
+                min-height: auto;
                 text-align: center;
+                padding: 120px 0 55px;
             }
 
             .hero-description {
@@ -505,10 +668,34 @@
                 margin-right: auto;
             }
 
-            .profile-frame {
-                width: 260px;
-                height: 310px;
-                margin-top: 40px;
+            .hero .d-flex {
+                justify-content: center;
+            }
+
+            .hero-photo {
+                height: 360px;
+                max-width: 330px;
+                margin-top: 30px;
+            }
+
+            .hero-photo::before {
+                width: 270px;
+                height: 270px;
+                right: 8%;
+            }
+
+            .hero-photo img {
+                -webkit-mask-image: linear-gradient(
+                    to bottom,
+                    black 75%,
+                    transparent 100%
+                );
+
+                mask-image: linear-gradient(
+                    to bottom,
+                    black 75%,
+                    transparent 100%
+                );
             }
 
             section {
@@ -524,13 +711,19 @@
             .gallery-thumbnail {
                 height: 115px;
             }
+
+            .hero h1 {
+                font-size: 36px;
+            }
         }
+
     </style>
 </head>
 
 <body>
 
 <!-- ================= NAVIGATION ================= -->
+
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
 
@@ -551,13 +744,17 @@
         <div class="collapse navbar-collapse" id="mainNavbar">
 
             <ul class="navbar-nav ms-auto align-items-lg-center">
+
                 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">What I Do</a></li>
                 <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#hosted-projects">Live Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
             </ul>
 
         </div>
@@ -565,15 +762,19 @@
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- ================= HERO BANNER ================= -->
+
 <section class="hero" id="home">
+
     <div class="container">
 
         <div class="row align-items-center">
 
             <div class="col-lg-7">
 
-                <p class="hero-subtitle">HELLO, WELCOME TO MY PORTFOLIO</p>
+                <p class="hero-subtitle">
+                    HELLO, WELCOME TO MY PORTFOLIO
+                </p>
 
                 <h1>
                     I'm <span>Takondwa Jean Kaulendo</span>
@@ -586,14 +787,21 @@
                 </p>
 
                 <div class="d-flex gap-3 flex-wrap">
-                    <a href="#projects" class="btn-custom">Explore My Work</a>
-                    <a href="#contact" class="btn-outline-custom">Contact Me</a>
+
+                    <a href="#projects" class="btn-custom">
+                        Explore My Work
+                    </a>
+
+                    <a href="#contact" class="btn-outline-custom">
+                        Contact Me
+                    </a>
+
                 </div>
 
                 <div class="social-links mt-4">
 
                     <!-- Replace # with your actual GitHub profile -->
-                    <a href="#" target="_blank" aria-label="GitHub">
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <i class="bi bi-github"></i>
                     </a>
 
@@ -606,31 +814,46 @@
                     </a>
 
                 </div>
+
             </div>
 
             <div class="col-lg-5">
-                <div class="profile-frame">
+
+                <!-- Only one profile picture -->
+                <div class="hero-photo">
+
                     <img src="images/profile.jpg"
                          alt="Takondwa Jean Kaulendo">
+
                 </div>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
 <!-- ================= ABOUT ================= -->
+
 <section id="about">
+
     <div class="container">
 
         <div class="section-title">
+
             <h2>About Me</h2>
+
             <div class="section-line"></div>
+
             <p>A little introduction about who I am and what drives me.</p>
+
         </div>
 
         <div class="row justify-content-center">
+
             <div class="col-lg-10">
 
                 <div class="about-card">
@@ -664,96 +887,141 @@
                     </p>
 
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
 
 <!-- ================= WHAT I DO ================= -->
+
 <section id="services" class="services-section">
+
     <div class="container">
 
         <div class="section-title">
+
             <h2>What I Do</h2>
+
             <div class="section-line"></div>
+
             <p>Areas where I apply my technical knowledge and creativity.</p>
+
         </div>
 
         <div class="row g-4">
 
             <div class="col-md-6 col-lg-3">
+
                 <div class="service-card">
+
                     <div class="service-icon">
                         <i class="bi bi-code-slash"></i>
                     </div>
+
                     <h5>Web Development</h5>
+
                     <p>
                         Developing responsive websites and web applications
                         using modern web technologies.
                     </p>
+
                 </div>
+
             </div>
 
             <div class="col-md-6 col-lg-3">
+
                 <div class="service-card">
+
                     <div class="service-icon">
                         <i class="bi bi-diagram-3"></i>
                     </div>
+
                     <h5>Systems Development</h5>
+
                     <p>
                         Analysing requirements and building digital systems
                         that improve organisational processes.
                     </p>
+
                 </div>
+
             </div>
 
             <div class="col-md-6 col-lg-3">
+
                 <div class="service-card">
+
                     <div class="service-icon">
                         <i class="bi bi-shield-lock"></i>
                     </div>
+
                     <h5>Cybersecurity</h5>
+
                     <p>
                         Exploring information security, system protection
                         and responsible technology practices.
                     </p>
+
                 </div>
+
             </div>
 
             <div class="col-md-6 col-lg-3">
+
                 <div class="service-card">
+
                     <div class="service-icon">
                         <i class="bi bi-pc-display"></i>
                     </div>
+
                     <h5>IT Support</h5>
+
                     <p>
                         Troubleshooting technical issues, maintaining systems
                         and supporting end users.
                     </p>
+
                 </div>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
 <!-- ================= SKILLS ================= -->
+
 <section id="skills" class="skills-section">
+
     <div class="container">
 
         <div class="section-title">
+
             <h2>Technical Skills</h2>
+
             <div class="section-line"></div>
+
             <p>Technologies and tools I have worked with.</p>
+
         </div>
 
         <div class="row g-4">
 
             <div class="col-md-6 col-lg-4">
+
                 <div class="skill-card">
+
                     <h5><i class="bi bi-code-slash me-2"></i>Web Development</h5>
+
                     <span class="skill-tag">HTML</span>
                     <span class="skill-tag">CSS</span>
                     <span class="skill-tag">Bootstrap</span>
@@ -761,81 +1029,118 @@
                     <span class="skill-tag">Laravel</span>
                     <span class="skill-tag">JavaScript</span>
                     <span class="skill-tag">WordPress</span>
+
                 </div>
+
             </div>
 
             <div class="col-md-6 col-lg-4">
+
                 <div class="skill-card">
+
                     <h5><i class="bi bi-database me-2"></i>Database Management</h5>
+
                     <span class="skill-tag">MySQL</span>
                     <span class="skill-tag">MariaDB</span>
                     <span class="skill-tag">Database Design</span>
                     <span class="skill-tag">SQL</span>
+
                 </div>
+
             </div>
 
             <div class="col-md-6 col-lg-4">
+
                 <div class="skill-card">
+
                     <h5><i class="bi bi-shield-check me-2"></i>IT & Security</h5>
+
                     <span class="skill-tag">Active Directory</span>
                     <span class="skill-tag">Networking</span>
                     <span class="skill-tag">Troubleshooting</span>
                     <span class="skill-tag">IT Support</span>
                     <span class="skill-tag">Cybersecurity</span>
+
                 </div>
+
             </div>
 
             <div class="col-md-6 col-lg-4">
+
                 <div class="skill-card">
+
                     <h5><i class="bi bi-tools me-2"></i>Tools & Platforms</h5>
+
                     <span class="skill-tag">Git</span>
                     <span class="skill-tag">GitHub</span>
                     <span class="skill-tag">Microsoft 365</span>
                     <span class="skill-tag">Intune</span>
                     <span class="skill-tag">CoreView</span>
                     <span class="skill-tag">Cisco</span>
+
                 </div>
+
             </div>
 
             <div class="col-md-6 col-lg-4">
+
                 <div class="skill-card">
+
                     <h5><i class="bi bi-file-earmark-code me-2"></i>Programming</h5>
+
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">PHP</span>
                     <span class="skill-tag">JavaScript</span>
+
                 </div>
+
             </div>
 
             <div class="col-md-6 col-lg-4">
+
                 <div class="skill-card">
+
                     <h5><i class="bi bi-clipboard-data me-2"></i>Professional Skills</h5>
+
                     <span class="skill-tag">Requirements Gathering</span>
                     <span class="skill-tag">Documentation</span>
                     <span class="skill-tag">Problem Solving</span>
                     <span class="skill-tag">System Maintenance</span>
                     <span class="skill-tag">Communication</span>
+
                 </div>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
-<!-- ================= PROJECTS ================= -->
+<!-- ================= MY PROJECTS ================= -->
+
 <section id="projects">
+
     <div class="container">
 
         <div class="section-title">
+
             <h2>My Projects</h2>
+
             <div class="section-line"></div>
+
             <p>Some of the projects I have worked on and continue to develop.</p>
+
         </div>
 
         <div class="row g-4">
 
             <!-- BLOOMHER -->
+
             <div class="col-md-6 col-lg-4">
+
                 <div class="project-card">
 
                     <div class="project-image">
@@ -843,7 +1148,9 @@
                     </div>
 
                     <div class="project-content">
+
                         <h5>BloomHer Website</h5>
+
                         <p>
                             A web-based project developed to provide an
                             online platform for its intended users.
@@ -862,13 +1169,18 @@
                                 data-bs-target="#bloomherModal">
                             <i class="bi bi-images me-1"></i> View Project
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
 
 
             <!-- DODMA -->
+
             <div class="col-md-6 col-lg-4">
+
                 <div class="project-card">
 
                     <div class="project-image">
@@ -876,7 +1188,9 @@
                     </div>
 
                     <div class="project-content">
+
                         <h5>DoDMA Disaster Management System</h5>
+
                         <p>
                             A system project focused on supporting disaster
                             management information and processes.
@@ -895,13 +1209,18 @@
                                 data-bs-target="#dodmaModal">
                             <i class="bi bi-images me-1"></i> View Project
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
 
 
             <!-- ASSET MANAGEMENT -->
+
             <div class="col-md-6 col-lg-4">
+
                 <div class="project-card">
 
                     <div class="project-image">
@@ -909,7 +1228,9 @@
                     </div>
 
                     <div class="project-content">
+
                         <h5>Asset Management System</h5>
+
                         <p>
                             A system designed to support the recording,
                             organisation and management of organisational assets.
@@ -927,13 +1248,18 @@
                                 data-bs-target="#propertyModal">
                             <i class="bi bi-images me-1"></i> View Project
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
 
 
             <!-- TAK AND TAD RESORT -->
+
             <div class="col-md-6 col-lg-4">
+
                 <div class="project-card">
 
                     <div class="project-image">
@@ -941,7 +1267,9 @@
                     </div>
 
                     <div class="project-content">
+
                         <h5>Tak & Tad Resort Website</h5>
+
                         <p>
                             A WordPress website project for a resort,
                             with web content and presentation features.
@@ -959,20 +1287,28 @@
                                 data-bs-target="#resortModal">
                             <i class="bi bi-images me-1"></i> View Project
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <!-- ADMISSIONS HUB -->           
+
+            <!-- ADMISSIONS HUB -->
+
             <div class="col-md-6 col-lg-4">
+
                 <div class="project-card">
 
                     <div class="project-image">
-                        <img src="images/admission.png" alt="Admissions Hub website app preview">
+                        <img src="images/admission.png" alt="Admissions Hub application preview">
                     </div>
 
                     <div class="project-content">
+
                         <h5>Admissions Hub</h5>
+
                         <p>
                             An admissions document review and workflow
                             management system designed to support application
@@ -988,23 +1324,31 @@
 
                         <button class="project-btn"
                                 data-bs-toggle="modal"
-                                data-bs-target="#resortModal">
+                                data-bs-target="#admissionModal">
                             <i class="bi bi-images me-1"></i> View Project
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <!-- AURACANDLES -->
+
+            <!-- AURA CANDLES -->
+
             <div class="col-md-6 col-lg-4">
+
                 <div class="project-card">
 
                     <div class="project-image">
-                        <img src="images/aura.png" alt="Aura Candles website preview">
+                        <img src="images/aura.png" alt="Aura Candles project preview">
                     </div>
 
                     <div class="project-content">
+
                         <h5>Aura Candles Hub</h5>
+
                         <p>
                             A scented candle business and digital brand project
                             focused on building a distinctive identity and
@@ -1014,37 +1358,179 @@
                         <div class="project-tech">
                             <span>Laravel</span>
                             <span>Filament</span>
-                            <span>Js</span>
+                            <span>JavaScript</span>
                             <span>MySQL</span>
                         </div>
 
                         <button class="project-btn"
                                 data-bs-toggle="modal"
-                                data-bs-target="#resortModal">
+                                data-bs-target="#auracandlesModal">
                             <i class="bi bi-images me-1"></i> View Project
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 
-<!-- ================= EXPERIENCE ================= -->
-<section id="experience" class="experience-section">
+<!-- ================= HOSTED PROJECTS ================= -->
+
+<section id="hosted-projects" class="hosted-section">
+
     <div class="container">
 
         <div class="section-title">
-            <h2>Professional Experience</h2>
+
+            <h2>Explore My Live Projects</h2>
+
             <div class="section-line"></div>
+
+            <p>
+                Visit some of my hosted websites and applications.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- BMIS WEBSITE -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="hosted-card">
+
+                    <div class="hosted-icon">
+                        <i class="bi bi-globe2"></i>
+                    </div>
+
+                    <h5>BMIS Website</h5>
+
+                    <p>
+                        An organisational website providing information,
+                        updates and digital access to school services.
+                    </p>
+
+                    <!-- Replace # with the actual website URL -->
+
+                    <a href="https://bmis.mw" target="_blank" rel="noopener noreferrer"
+                       class="hosted-link">
+
+                        Visit Website
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADMISSIONS HUB -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="hosted-card">
+
+                    <div class="hosted-icon">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+
+                    <h5>Admissions Hub</h5>
+
+                    <p>
+                        An admissions document review and workflow
+                        management application.
+                    </p>
+
+                    <!-- Add deployed Admissions Hub URL -->
+
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                       class="hosted-link">
+
+                        View Application
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- AURA CANDLES -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="hosted-card">
+
+                    <div class="hosted-icon">
+                        <i class="bi bi-fire"></i>
+                    </div>
+
+                    <h5>Aura Candles</h5>
+
+                    <p>
+                        A scented candle brand and digital project
+                        focused on creating a distinctive customer experience.
+                    </p>
+
+                    <!-- Add deployed Aura Candles URL -->
+
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                       class="hosted-link">
+
+                        Explore Project
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROFESSIONAL EXPERIENCE ================= -->
+
+<section id="experience" class="experience-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Professional Experience</h2>
+
+            <div class="section-line"></div>
+
             <p>My professional journey and practical experience.</p>
+
         </div>
 
         <div class="row justify-content-center">
+
             <div class="col-lg-9">
 
+                <!-- BMIS -->
+
                 <div class="experience-card">
+
                     <span class="date">Current Role</span>
+
                     <h5 class="mt-2">Website Developer / Manager</h5>
+
                     <h6>BMIS</h6>
 
                     <ul>
@@ -1054,11 +1540,18 @@
                         <li>Gather stakeholder requirements and maintain website documentation and content.</li>
                         <li>Provide support for digital and admissions-related processes.</li>
                     </ul>
+
                 </div>
 
+
+                <!-- OLD MUTUAL -->
+
                 <div class="experience-card">
+
                     <span class="date">April 2025 – September 2025</span>
+
                     <h5 class="mt-2">IT Specialist Intern</h5>
+
                     <h6>Old Mutual Malawi</h6>
 
                     <ul>
@@ -1068,11 +1561,18 @@
                         <li>Worked with CoreView compliance monitoring and IT operations.</li>
                         <li>Gained exposure to server room operations.</li>
                     </ul>
+
                 </div>
 
+
+                <!-- C-TECH -->
+
                 <div class="experience-card">
+
                     <span class="date">December 2024 – February 2025</span>
+
                     <h5 class="mt-2">ICT Attachment</h5>
+
                     <h6>C-Tech Systems</h6>
 
                     <ul>
@@ -1080,69 +1580,97 @@
                         <li>Participated in requirements gathering.</li>
                         <li>Gained practical exposure to professional ICT environments.</li>
                     </ul>
+
                 </div>
 
             </div>
+
         </div>
+
     </div>
+
 </section>
 
 
 <!-- ================= EDUCATION ================= -->
+
 <section id="education">
+
     <div class="container">
 
         <div class="section-title">
+
             <h2>Education</h2>
+
             <div class="section-line"></div>
+
         </div>
 
         <div class="row justify-content-center">
+
             <div class="col-lg-8">
 
                 <div class="education-card">
+
                     <div class="d-flex align-items-start gap-3">
 
                         <i class="bi bi-mortarboard-fill fs-1"
                            style="color: var(--burgundy);"></i>
 
                         <div>
+
                             <h5>
                                 Bachelor of Science in Information and Communication Technology
                             </h5>
 
                             <p class="mb-1">Mzuzu University</p>
-                            <p class="text-muted mb-0">Graduated: 15 May 2025</p>
+
+                            <p class="text-muted mb-0">
+                                Graduated: 15 May 2025
+                            </p>
+
                         </div>
 
                     </div>
+
                 </div>
 
             </div>
+
         </div>
+
     </div>
+
 </section>
 
 
 <!-- ================= CONTACT ================= -->
+
 <section id="contact" class="contact-section">
+
     <div class="container">
 
         <div class="section-title">
+
             <h2>Get In Touch</h2>
+
             <div class="section-line"></div>
 
             <p>
                 Have a project, opportunity or idea you would like to discuss?
                 I would love to hear from you.
             </p>
+
         </div>
 
         <div class="row g-4 justify-content-center">
 
             <div class="col-md-6 col-lg-4">
+
                 <div class="contact-card">
+
                     <i class="bi bi-envelope-fill"></i>
+
                     <h5>Email</h5>
 
                     <p>
@@ -1150,34 +1678,58 @@
                             takondwakaulendo@gmail.com
                         </a>
                     </p>
+
                 </div>
+
             </div>
 
+
             <div class="col-md-6 col-lg-4">
+
                 <div class="contact-card">
+
                     <i class="bi bi-telephone-fill"></i>
+
                     <h5>Phone</h5>
 
-                    <p><a href="tel:+265997230751">+265 997 230 751</a></p>
-                    <p><a href="tel:+265887916417">+265 887 916 417</a></p>
+                    <p>
+                        <a href="tel:+265997230751">+265 997 230 751</a>
+                    </p>
+
+                    <p>
+                        <a href="tel:+265887916417">+265 887 916 417</a>
+                    </p>
+
                 </div>
+
             </div>
 
+
             <div class="col-md-6 col-lg-4">
+
                 <div class="contact-card">
+
                     <i class="bi bi-geo-alt-fill"></i>
+
                     <h5>Location</h5>
+
                     <p>Lilongwe, Malawi</p>
+
                 </div>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
 <!-- ================= FOOTER ================= -->
+
 <footer>
+
     <div class="container">
 
         <p>
@@ -1188,12 +1740,14 @@
         <p class="mt-1">Designed with passion and purpose.</p>
 
     </div>
+
 </footer>
 
 
 <!-- =====================================================
      BLOOMHER IMAGE GALLERY
 ===================================================== -->
+
 <div class="modal fade gallery-modal" id="bloomherModal"
      tabindex="-1" aria-hidden="true">
 
@@ -1202,12 +1756,16 @@
         <div class="modal-content">
 
             <div class="modal-header">
+
                 <h5 class="modal-title">BloomHer Screenshots</h5>
+
                 <button type="button" class="btn-close"
                         data-bs-dismiss="modal" aria-label="Close"></button>
+
             </div>
 
             <div class="modal-body">
+
                 <div class="row g-3">
 
                     <div class="col-6 col-md-4">
@@ -1247,15 +1805,20 @@
                     </div>
 
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
 
 
 <!-- =====================================================
      DODMA IMAGE GALLERY
 ===================================================== -->
+
 <div class="modal fade gallery-modal" id="dodmaModal"
      tabindex="-1" aria-hidden="true">
 
@@ -1264,12 +1827,16 @@
         <div class="modal-content">
 
             <div class="modal-header">
+
                 <h5 class="modal-title">DoDMA Screenshots</h5>
+
                 <button type="button" class="btn-close"
                         data-bs-dismiss="modal" aria-label="Close"></button>
+
             </div>
 
             <div class="modal-body">
+
                 <div class="row g-3">
 
                     <div class="col-6 col-md-4">
@@ -1309,15 +1876,20 @@
                     </div>
 
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
 
 
 <!-- =====================================================
      ASSET MANAGEMENT IMAGE GALLERY
 ===================================================== -->
+
 <div class="modal fade gallery-modal" id="propertyModal"
      tabindex="-1" aria-hidden="true">
 
@@ -1326,12 +1898,16 @@
         <div class="modal-content">
 
             <div class="modal-header">
+
                 <h5 class="modal-title">Asset Management Screenshots</h5>
+
                 <button type="button" class="btn-close"
                         data-bs-dismiss="modal" aria-label="Close"></button>
+
             </div>
 
             <div class="modal-body">
+
                 <div class="row g-3">
 
                     <div class="col-6 col-md-4">
@@ -1371,15 +1947,20 @@
                     </div>
 
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
 
 
 <!-- =====================================================
      TAK & TAD RESORT IMAGE GALLERY
 ===================================================== -->
+
 <div class="modal fade gallery-modal" id="resortModal"
      tabindex="-1" aria-hidden="true">
 
@@ -1388,12 +1969,16 @@
         <div class="modal-content">
 
             <div class="modal-header">
+
                 <h5 class="modal-title">Tak & Tad Resort Screenshots</h5>
+
                 <button type="button" class="btn-close"
                         data-bs-dismiss="modal" aria-label="Close"></button>
+
             </div>
 
             <div class="modal-body">
+
                 <div class="row g-3">
 
                     <div class="col-6 col-md-4">
@@ -1433,14 +2018,21 @@
                     </div>
 
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
+
+
 <!-- =====================================================
-     ADMISSION HUB IMAGE GALLERY
+     ADMISSIONS HUB IMAGE GALLERY
 ===================================================== -->
-<div class="modal fade gallery-modal" id="AdmissionModal"
+
+<div class="modal fade gallery-modal" id="admissionModal"
      tabindex="-1" aria-hidden="true">
 
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
@@ -1448,58 +2040,69 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title">Admission Hub Screenshots</h5>
+
+                <h5 class="modal-title">Admissions Hub Screenshots</h5>
+
                 <button type="button" class="btn-close"
                         data-bs-dismiss="modal" aria-label="Close"></button>
+
             </div>
 
             <div class="modal-body">
+
                 <div class="row g-3">
 
                     <div class="col-6 col-md-4">
-                        <a href="images/admission1.png" class="glightbox" data-gallery="resort">
-                            <img src="images/admission1.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 1">
+                        <a href="images/admission1.png" class="glightbox" data-gallery="admission">
+                            <img src="images/admission1.png" class="img-fluid rounded gallery-thumbnail" alt="Admissions Hub screenshot 1">
                         </a>
                     </div>
 
                     <div class="col-6 col-md-4">
-                        <a href="images/admission2.png" class="glightbox" data-gallery="resort">
-                            <img src="images/admission2.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 2">
+                        <a href="images/admission2.png" class="glightbox" data-gallery="admission">
+                            <img src="images/admission2.png" class="img-fluid rounded gallery-thumbnail" alt="Admissions Hub screenshot 2">
                         </a>
                     </div>
 
                     <div class="col-6 col-md-4">
-                        <a href="images/admission3.png" class="glightbox" data-gallery="resort">
-                            <img src="images/admission3.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 3">
+                        <a href="images/admission3.png" class="glightbox" data-gallery="admission">
+                            <img src="images/admission3.png" class="img-fluid rounded gallery-thumbnail" alt="Admissions Hub screenshot 3">
                         </a>
                     </div>
 
                     <div class="col-6 col-md-4">
-                        <a href="images/admission4.png" class="glightbox" data-gallery="resort">
-                            <img src="images/admission4.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 4">
+                        <a href="images/admission4.png" class="glightbox" data-gallery="admission">
+                            <img src="images/admission4.png" class="img-fluid rounded gallery-thumbnail" alt="Admissions Hub screenshot 4">
                         </a>
                     </div>
 
                     <div class="col-6 col-md-4">
-                        <a href="images/admission5.png" class="glightbox" data-gallery="resort">
-                            <img src="images/admission5.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 5">
+                        <a href="images/admission5.png" class="glightbox" data-gallery="admission">
+                            <img src="images/admission5.png" class="img-fluid rounded gallery-thumbnail" alt="Admissions Hub screenshot 5">
                         </a>
                     </div>
 
                     <div class="col-6 col-md-4">
-                        <a href="images/admission6.png" class="glightbox" data-gallery="resort">
-                            <img src="images/admission6.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 6">
+                        <a href="images/admission6.png" class="glightbox" data-gallery="admission">
+                            <img src="images/admission6.png" class="img-fluid rounded gallery-thumbnail" alt="Admissions Hub screenshot 6">
                         </a>
                     </div>
 
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
+
+
 <!-- =====================================================
-     Aura Candles IMAGE GALLERY
+     AURA CANDLES IMAGE GALLERY
 ===================================================== -->
+
 <div class="modal fade gallery-modal" id="auracandlesModal"
      tabindex="-1" aria-hidden="true">
 
@@ -1508,55 +2111,64 @@
         <div class="modal-content">
 
             <div class="modal-header">
+
                 <h5 class="modal-title">Aura Candles Screenshots</h5>
+
                 <button type="button" class="btn-close"
                         data-bs-dismiss="modal" aria-label="Close"></button>
+
             </div>
 
             <div class="modal-body">
+
                 <div class="row g-3">
 
                     <div class="col-6 col-md-4">
-                        <a href="images/aura1.png" class="glightbox" data-gallery="resort">
-                            <img src="images/aura1.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 1">
+                        <a href="images/aura1.png" class="glightbox" data-gallery="aura">
+                            <img src="images/aura1.png" class="img-fluid rounded gallery-thumbnail" alt="Aura Candles screenshot 1">
                         </a>
                     </div>
 
                     <div class="col-6 col-md-4">
-                        <a href="images/aura2.png" class="glightbox" data-gallery="resort">
-                            <img src="images/aura2.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 2">
+                        <a href="images/aura2.png" class="glightbox" data-gallery="aura">
+                            <img src="images/aura2.png" class="img-fluid rounded gallery-thumbnail" alt="Aura Candles screenshot 2">
                         </a>
                     </div>
 
                     <div class="col-6 col-md-4">
-                        <a href="images/aura3.png" class="glightbox" data-gallery="resort">
-                            <img src="images/aura3.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 3">
+                        <a href="images/aura3.png" class="glightbox" data-gallery="aura">
+                            <img src="images/aura3.png" class="img-fluid rounded gallery-thumbnail" alt="Aura Candles screenshot 3">
                         </a>
                     </div>
 
                     <div class="col-6 col-md-4">
-                        <a href="images/aura4.png" class="glightbox" data-gallery="resort">
-                            <img src="images/aura4.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 4">
+                        <a href="images/aura4.png" class="glightbox" data-gallery="aura">
+                            <img src="images/aura4.png" class="img-fluid rounded gallery-thumbnail" alt="Aura Candles screenshot 4">
                         </a>
                     </div>
 
                     <div class="col-6 col-md-4">
-                        <a href="images/aura5.png" class="glightbox" data-gallery="resort">
-                            <img src="images/aura5.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 5">
+                        <a href="images/aura5.png" class="glightbox" data-gallery="aura">
+                            <img src="images/aura5.png" class="img-fluid rounded gallery-thumbnail" alt="Aura Candles screenshot 5">
                         </a>
                     </div>
 
                     <div class="col-6 col-md-4">
-                        <a href="images/aura6.png" class="glightbox" data-gallery="resort">
-                            <img src="images/aura6.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 6">
+                        <a href="images/aura6.png" class="glightbox" data-gallery="aura">
+                            <img src="images/aura6.png" class="img-fluid rounded gallery-thumbnail" alt="Aura Candles screenshot 6">
                         </a>
                     </div>
 
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
+
 
 <!-- ================= JAVASCRIPT ================= -->
 
@@ -1567,10 +2179,15 @@
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
 <script>
+
     // Automatically update copyright year
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
 
     // Initialise GLightbox for all project screenshot galleries
+
     const lightbox = GLightbox({
         selector: '.glightbox',
         loop: true,
@@ -1578,16 +2195,25 @@
         zoomable: true
     });
 
+
     // Close mobile navigation when a link is clicked
+
     document.querySelectorAll(".navbar .nav-link").forEach(function(link) {
+
         link.addEventListener("click", function() {
+
             const navbar = document.getElementById("mainNavbar");
 
             if (navbar.classList.contains("show")) {
+
                 bootstrap.Collapse.getOrCreateInstance(navbar).hide();
+
             }
+
         });
+
     });
+
 </script>
 
 </body>
