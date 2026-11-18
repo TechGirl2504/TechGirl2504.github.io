@@ -1,293 +1,1480 @@
+
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Takondwa Jean Kaulendo - ICT Graduate, Web Developer and IT Professional.">
 
-  <meta charset="utf-8" />
+    <title>Takondwa Jean Kaulendo | Portfolio</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <title>Takondwa Jean Kaulendo — PHP Web Developer</title>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    :root{--accent:#6c63ff;--muted:#6c757d}
-    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.6;color:#222}
-    .hero{background:#f8f9ff;padding:80px 0;text-align:center}
-    .hero h1{font-weight:700;margin-bottom:0}
-    .lead-tag{color:var(--muted)}
-    .section-title{font-weight:600;margin-bottom:24px}
-    .skill-pill{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid #e9e9ff;margin:6px 6px 6px 0}
-    .project-card img{width:100%;height:180px;object-fit:cover;border-radius:6px}
-    .project-card .card-body{padding:1rem}
-    footer{padding:40px 0}
-    .nav-link{color:#333}
-    .btn-accent{background:var(--accent);border:0;color:#fff}
-    @media(min-width:992px){.hero{padding:110px 0}}
-  </style>
+    <!-- GLightbox CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --burgundy: #70263f;
+            --dark-burgundy: #4d172c;
+            --pink: #e9b9c9;
+            --light-pink: #fff1f5;
+            --soft-white: #fff7f9;
+            --white: #ffffff;
+            --text: #35232b;
+            --muted: #806f77;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--soft-white);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            color: var(--dark-burgundy);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            background: rgba(255,255,255,0.97);
+            box-shadow: 0 3px 18px rgba(77,23,44,0.07);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-size: 23px;
+            font-weight: 800;
+            color: var(--burgundy);
+        }
+
+        .navbar-brand span {
+            color: var(--pink);
+        }
+
+        .nav-link {
+            color: var(--text);
+            font-weight: 600;
+            margin-left: 13px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--burgundy);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(120deg, #fff1f5, #fff7f9 55%, #f4dce5);
+            padding: 110px 0 75px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--burgundy);
+        }
+
+        .hero-subtitle {
+            color: var(--burgundy);
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .hero-description {
+            color: var(--muted);
+            font-size: 17px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .profile-frame {
+            width: 330px;
+            height: 390px;
+            max-width: 100%;
+            margin: auto;
+            border: 9px solid white;
+            border-radius: 48% 48% 25px 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(77,23,44,0.15);
+            background: var(--pink);
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* BUTTONS */
+        .btn-custom {
+            display: inline-block;
+            background: var(--burgundy);
+            color: white;
+            border: 2px solid var(--burgundy);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-custom:hover {
+            background: var(--dark-burgundy);
+            border-color: var(--dark-burgundy);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            display: inline-block;
+            color: var(--burgundy);
+            border: 2px solid var(--burgundy);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-outline-custom:hover {
+            background: var(--burgundy);
+            color: white;
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 85px 0;
+            scroll-margin-top: 75px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+        .section-line {
+            width: 65px;
+            height: 4px;
+            background: var(--pink);
+            margin: 15px auto;
+            border-radius: 10px;
+        }
+
+        /* ABOUT */
+        .about-card,
+        .service-card,
+        .skill-card,
+        .project-card,
+        .experience-card,
+        .contact-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 7px 25px rgba(77,23,44,0.07);
+        }
+
+        .about-card {
+            padding: 35px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+        }
+
+        .about-highlight {
+            color: var(--burgundy);
+            font-weight: 700;
+        }
+
+        /* SERVICES */
+        .services-section,
+        .skills-section,
+        .experience-section {
+            background: var(--light-pink);
+        }
+
+        .service-card {
+            padding: 30px 24px;
+            height: 100%;
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            border-bottom-color: var(--burgundy);
+        }
+
+        .service-icon {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--light-pink);
+            color: var(--burgundy);
+            font-size: 26px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        /* SKILLS */
+        .skill-card {
+            padding: 25px;
+            height: 100%;
+        }
+
+        .skill-card h5 {
+            margin-bottom: 18px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: var(--light-pink);
+            color: var(--burgundy);
+            border: 1px solid #f0d3dd;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 4px;
+        }
+
+        /* PROJECTS */
+        .project-card {
+            height: 100%;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(77,23,44,0.13);
+        }
+
+        .project-image {
+            height: 220px;
+            background: var(--light-pink);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.04);
+        }
+
+        .project-placeholder {
+            color: var(--burgundy);
+            text-align: center;
+            padding: 25px;
+        }
+
+        .project-placeholder i {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-content h5 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: var(--muted);
+            font-size: 14px;
+            min-height: 65px;
+        }
+
+        .project-tech {
+            margin-bottom: 18px;
+        }
+
+        .project-tech span {
+            display: inline-block;
+            background: var(--light-pink);
+            color: var(--burgundy);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 11px;
+            margin: 3px;
+        }
+
+        .project-btn {
+            background: var(--burgundy);
+            border: none;
+            color: white;
+            padding: 9px 18px;
+            border-radius: 22px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .project-btn:hover {
+            background: var(--dark-burgundy);
+            color: white;
+        }
+
+        /* PROJECT GALLERY MODALS */
+        .gallery-modal .modal-content {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .gallery-modal .modal-header {
+            background: var(--dark-burgundy);
+            color: white;
+            border: none;
+        }
+
+        .gallery-modal .modal-title {
+            color: white;
+        }
+
+        .gallery-modal .btn-close {
+            filter: invert(1);
+        }
+
+        .gallery-modal .modal-body {
+            background: var(--soft-white);
+            padding: 25px;
+        }
+
+        .gallery-thumbnail {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: 0.3s ease;
+            background: var(--light-pink);
+        }
+
+        .gallery-thumbnail:hover {
+            transform: scale(1.03);
+            border-color: var(--burgundy);
+            box-shadow: 0 5px 15px rgba(77,23,44,0.15);
+        }
+
+        /* EXPERIENCE */
+        .experience-card {
+            padding: 28px;
+            margin-bottom: 22px;
+            border-left: 5px solid var(--burgundy);
+        }
+
+        .experience-card .date {
+            color: var(--burgundy);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .experience-card p,
+        .experience-card li {
+            color: var(--muted);
+        }
+
+        /* EDUCATION */
+        .education-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--pink);
+            box-shadow: 0 7px 25px rgba(77,23,44,0.07);
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: linear-gradient(120deg, var(--light-pink), var(--soft-white));
+        }
+
+        .contact-card {
+            padding: 30px;
+            height: 100%;
+            text-align: center;
+        }
+
+        .contact-card i {
+            font-size: 30px;
+            color: var(--burgundy);
+            margin-bottom: 12px;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+            margin-bottom: 0;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card a {
+            color: var(--burgundy);
+            font-weight: 600;
+        }
+
+        /* SOCIAL LINKS */
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 42px;
+            height: 42px;
+            margin-right: 8px;
+            border-radius: 50%;
+            background: white;
+            color: var(--burgundy);
+            font-size: 19px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--burgundy);
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-burgundy);
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .profile-frame {
+                width: 260px;
+                height: 310px;
+                margin-top: 40px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .gallery-thumbnail {
+                height: 145px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .gallery-thumbnail {
+                height: 115px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+
+<!-- ================= NAVIGATION ================= -->
+<nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">MY PORTFOLIO</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- HERO -->
-  <header class="hero">
+        <a class="navbar-brand" href="#home">
+            Takondwa<span>.</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">What I Do</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
     <div class="container">
-      <h1>Takondwa Jean Kaulendo</h1>
-      <p class="lead lead-tag">PHP Web Developer</p>
-      <p class="mx-auto" style="max-width:700px">I build responsive, accessible websites and web applications with a focus on clean code and practical solutions.</p>
-      <a href="#projects" class="btn btn-accent btn-lg mt-3">View Projects</a>
-    </div>
-  </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="container my-5">
-    <div class="row align-items-center">
-      <div class="col-md-4 text-center mb-4 mb-md-0">
-        <div style="width:220px;height:220px;background:#eef;display:inline-block;border-radius:8px;overflow:hidden;">
-          <img src="images/profile.jpg" alt="Takondwa Jean" style="width:100%;height:100%;object-fit:cover">
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <p class="hero-subtitle">HELLO, WELCOME TO MY PORTFOLIO</p>
+
+                <h1>
+                    I'm <span>Takondwa Jean Kaulendo</span>
+                </h1>
+
+                <p class="hero-description">
+                    An ICT graduate and technology enthusiast passionate
+                    about building digital solutions, developing systems
+                    and using technology to solve real-world problems.
+                </p>
+
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#projects" class="btn-custom">Explore My Work</a>
+                    <a href="#contact" class="btn-outline-custom">Contact Me</a>
+                </div>
+
+                <div class="social-links mt-4">
+
+                    <!-- Replace # with your actual GitHub profile -->
+                    <a href="#" target="_blank" aria-label="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+
+                    <a href="mailto:takondwakaulendo@gmail.com" aria-label="Email">
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
+
+                    <a href="tel:+265997230751" aria-label="Phone">
+                        <i class="bi bi-telephone-fill"></i>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="profile-frame">
+                    <img src="images/profile.jpg"
+                         alt="Takondwa Jean Kaulendo">
+                </div>
+            </div>
+
         </div>
-      </div>
-      <div class="col-md-8">
-        <h2 class="section-title">About Me</h2>
-      <p><strong>Takondwa J. Kaulendo</strong> – Lilongwe, Malawi.</p>
-      <p>I am a motivated ICT graduate from Mzuzu University with hands-on experience in web development, network support, and IT systems management. I enjoy building responsive websites and solving technical challenges efficiently.</p>
-      <p>I have gained practical experience at C-Tech Systems Ltd and Old Mutual Malawi, assisting in web projects, system administration, and end-user support. I bring strong communication, teamwork, and problem-solving skills to every project.</p>
-   </div>
     </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="bg-light py-5">
-    <div class="container">
-      <h3 class="section-title text-center">Skills</h3>
-      <div class="text-center mb-3">
-        <span class="skill-pill">HTML</span>
-        <span class="skill-pill">CSS</span>
-        <span class="skill-pill">JavaScript</span>
-        <span class="skill-pill">Bootstrap</span>
-        <span class="skill-pill">PHP</span>
-        <span class="skill-pill">MySQL</span>
-        <span class="skill-pill">GitHub</span>
-        <span class="skill-pill">VS Code</span>
-        <span class="skill-pill">XAMPP</span>
-        <span class="skill-pill">Wordpress</span>
-      </div>
-      <ul class="text-center text-muted" style="list-style:none; padding:0; margin:0; text-align:center;">
-          <li><strong>1. Front-end:</strong> HTML, CSS, JavaScript, Bootstrap</li>
-          <li><strong>2. Back-end:</strong> PHP, MySQL</li>
-          <li><strong>3. Tools:</strong> GitHub, VS Code, XAMPP, WordPress</li>
-      </ul>
-
-
-  </section>
-
-<!-- PROJECTS -->
-<section id="projects" class="container my-5">
-  <h3 class="section-title text-center">My Projects</h3>
-  <div class="row g-4">
-
-    <!-- Project 1 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card project-card h-100 shadow-sm">
-        <img src="images/bloomher.png" alt="BloomHer project">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title"><strong>BloomHer Website</strong></h5>
-          <p class="card-text">A responsive website designed to empower and inspire young girls through education and lifestyle programs. It features an admin panel for managing content, and a visitor site where users can view programs, apply as volunteers, and contact the organization.</p>
-          <p class="mt-auto mb-0"><strong>Tech:</strong> PHP, MySQL, HTML, CSS, Bootstrap</p>
-          <div class="mt-3">
-            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#bloomherModal">View Screenshots</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card project-card h-100 shadow-sm">
-        <img src="images/dodma.png" alt="Disaster Management project">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title"><strong>Disaster Management System (DoDMA)</strong></h5>
-          <p class="card-text">A data-driven system built to support disaster response operations. It helps field teams collect household-level data, track affected families, and manage inventory distribution efficiently.</p>
-          <p class="mt-auto mb-0"><strong>Tech:</strong> PHP, MySQL, HTML, CSS, Bootstrap</p>
-          <div class="mt-3">
-            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#dodmaModal">View Screenshots</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card project-card h-100 shadow-sm">
-        <img src="images/property.png" alt="Property Management">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title"><strong>Asset Management System</strong></h5>
-          <p class="card-text">A web application that enables users to add procured items, allocate them to departments, and allows departmental personnel to assign assets to individual staff members for accountability and tracking.</p>
-          <p class="mt-auto mb-0"><strong>Tech:</strong> PHP, MySQL, HTML, CSS</p>
-          <div class="mt-3">
-            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#propertyModal">View Screenshots</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Project 4 -->
-  <div class="col-md-6 col-lg-4 mt-4">
-    <div class="card project-card h-100 shadow-sm">
-      <img src="images/resort.png" alt="Tak&Tad Resort">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title"><strong>Tak&Tad Resort Website</strong></h5>
-        <p class="card-text">A dynamic WordPress website designed to showcase a resort’s services and facilities. It features a gallery, contact form, and an engaging layout to enhance visitor experience and attract customers.</p>
-        <p class="mt-auto mb-0"><strong>Tech:</strong> WordPress, HTML, CSS, MySQL</p>
-        <div class="mt-3">
-          <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#resortModal">View Screenshots</button>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
-  <!-- MODALS -->
- <!-- BloomHer Modal -->
-<div class="modal fade" id="bloomherModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">BloomHer Screenshots</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-2">
-          <div class="col-4"><a href="images/bloomher1.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher1.png" class="img-fluid rounded" alt="BloomHer 1"></a></div>
-          <div class="col-4"><a href="images/bloomher2.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher2.png" class="img-fluid rounded" alt="BloomHer 2"></a></div>
-          <div class="col-4"><a href="images/bloomher3.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher3.png" class="img-fluid rounded" alt="BloomHer 3"></a></div>
-          <div class="col-4"><a href="images/bloomher4.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher4.png" class="img-fluid rounded" alt="BloomHer 4"></a></div>
-          <div class="col-4"><a href="images/bloomher5.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher5.png" class="img-fluid rounded" alt="BloomHer 5"></a></div>
-          <div class="col-4"><a href="images/bloomher6.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher6.png" class="img-fluid rounded" alt="BloomHer 6"></a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- DoDMA Modal -->
-<div class="modal fade" id="dodmaModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">DoDMA Screenshots</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-2">
-          <div class="col-4"><a href="images/dodma1.png" class="glightbox" data-gallery="dodma"><img src="images/dodma1.png" class="img-fluid rounded" alt="DoDMA 1"></a></div>
-          <div class="col-4"><a href="images/dodma2.png" class="glightbox" data-gallery="dodma"><img src="images/dodma2.png" class="img-fluid rounded" alt="DoDMA 2"></a></div>
-          <div class="col-4"><a href="images/dodma3.png" class="glightbox" data-gallery="dodma"><img src="images/dodma3.png" class="img-fluid rounded" alt="DoDMA 3"></a></div>
-          <div class="col-4"><a href="images/dodma4.png" class="glightbox" data-gallery="dodma"><img src="images/dodma4.png" class="img-fluid rounded" alt="DoDMA 4"></a></div>
-          <div class="col-4"><a href="images/dodma5.png" class="glightbox" data-gallery="dodma"><img src="images/dodma5.png" class="img-fluid rounded" alt="DoDMA 5"></a></div>
-          <div class="col-4"><a href="images/dodma6.png" class="glightbox" data-gallery="dodma"><img src="images/dodma6.png" class="img-fluid rounded" alt="DoDMA 6"></a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- ================= ABOUT ================= -->
+<section id="about">
+    <div class="container">
 
-<!-- Asset Management Modal -->
-<div class="modal fade" id="propertyModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Asset Management Screenshots</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-2">
-          <div class="col-4"><a href="images/property1.png" class="glightbox" data-gallery="property"><img src="images/property1.png" class="img-fluid rounded" alt="Property 1"></a></div>
-          <div class="col-4"><a href="images/property2.png" class="glightbox" data-gallery="property"><img src="images/property2.png" class="img-fluid rounded" alt="Property 2"></a></div>
-          <div class="col-4"><a href="images/property3.png" class="glightbox" data-gallery="property"><img src="images/property3.png" class="img-fluid rounded" alt="Property 3"></a></div>
-          <div class="col-4"><a href="images/property4.png" class="glightbox" data-gallery="property"><img src="images/property4.png" class="img-fluid rounded" alt="Property 4"></a></div>
-          <div class="col-4"><a href="images/property5.png" class="glightbox" data-gallery="property"><img src="images/property5.png" class="img-fluid rounded" alt="Property 5"></a></div>
-          <div class="col-4"><a href="images/property6.png" class="glightbox" data-gallery="property"><img src="images/property6.png" class="img-fluid rounded" alt="Property 6"></a></div>
+        <div class="section-title">
+            <h2>About Me</h2>
+            <div class="section-line"></div>
+            <p>A little introduction about who I am and what drives me.</p>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Tak&Tad Resort Modal -->
-<div class="modal fade" id="resortModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Tak&Tad Resort Screenshots</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-2">
-          <div class="col-4"><a href="images/resort1.png" class="glightbox" data-gallery="resort"><img src="images/resort1.png" class="img-fluid rounded" alt="Resort 1"></a></div>
-          <div class="col-4"><a href="images/resort2.png" class="glightbox" data-gallery="resort"><img src="images/resort2.png" class="img-fluid rounded" alt="Resort 2"></a></div>
-          <div class="col-4"><a href="images/resort3.png" class="glightbox" data-gallery="resort"><img src="images/resort3.png" class="img-fluid rounded" alt="Resort 3"></a></div>
-          <div class="col-4"><a href="images/resort4.png" class="glightbox" data-gallery="resort"><img src="images/resort4.png" class="img-fluid rounded" alt="Resort 4"></a></div>
-          <div class="col-4"><a href="images/resort5.png" class="glightbox" data-gallery="resort"><img src="images/resort5.png" class="img-fluid rounded" alt="Resort 5"></a></div>
-          <div class="col-4"><a href="images/resort6.png" class="glightbox" data-gallery="resort"><img src="images/resort6.png" class="img-fluid rounded" alt="Resort 6"></a></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <div class="about-card">
+
+                    <p>
+                        My name is
+                        <span class="about-highlight">Takondwa Jean Kaulendo</span>,
+                        an ICT graduate from Mzuzu University, Malawi.
+                        I am passionate about technology, innovation and
+                        the development of practical digital solutions.
+                    </p>
+
+                    <p>
+                        My interests include web development, systems analysis
+                        and development, cybersecurity, IT support and digital
+                        transformation. I enjoy understanding challenges,
+                        identifying opportunities for improvement and turning
+                        ideas into functional solutions.
+                    </p>
+
+                    <p>
+                        Through my academic projects and professional experience,
+                        I have developed an interest in creating systems that
+                        improve processes, support decision-making and make
+                        everyday work easier.
+                    </p>
+
+                    <p class="mb-0">
+                        I believe in continuous learning, personal growth and
+                        using technology to make a meaningful difference.
+                    </p>
+
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
+</section>
 
-<!-- CONTACT -->
-<section id="contact" class="bg-dark text-white py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6 text-center">
-        <h3 class="section-title">Get in touch</h3>
-        <p>If you'd like to work together or invite me for an interview, please send an email, connect on GitHub/LinkedIn, or call me.</p>
-        <p class="mb-1"><strong>Email:</strong> <a id="emailLink" href="mailto:takondwakaulendo@gmail.com" class="text-white">takondwakaulendo@gmail.com</a></p>
-        <p class="mb-1"><strong>Phone:</strong> +265 997 230 751 | +265 887 916 417 </p>
-        <p class="mb-0">
-          <a id="githubLink" href="#" class="text-white">GitHub</a>
+
+<!-- ================= WHAT I DO ================= -->
+<section id="services" class="services-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>What I Do</h2>
+            <div class="section-line"></div>
+            <p>Areas where I apply my technical knowledge and creativity.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h5>Web Development</h5>
+                    <p>
+                        Developing responsive websites and web applications
+                        using modern web technologies.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-diagram-3"></i>
+                    </div>
+                    <h5>Systems Development</h5>
+                    <p>
+                        Analysing requirements and building digital systems
+                        that improve organisational processes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                    <h5>Cybersecurity</h5>
+                    <p>
+                        Exploring information security, system protection
+                        and responsible technology practices.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-pc-display"></i>
+                    </div>
+                    <h5>IT Support</h5>
+                    <p>
+                        Troubleshooting technical issues, maintaining systems
+                        and supporting end users.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="skills-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Technical Skills</h2>
+            <div class="section-line"></div>
+            <p>Technologies and tools I have worked with.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <h5><i class="bi bi-code-slash me-2"></i>Web Development</h5>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">WordPress</span>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <h5><i class="bi bi-database me-2"></i>Database Management</h5>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MariaDB</span>
+                    <span class="skill-tag">Database Design</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <h5><i class="bi bi-shield-check me-2"></i>IT & Security</h5>
+                    <span class="skill-tag">Active Directory</span>
+                    <span class="skill-tag">Networking</span>
+                    <span class="skill-tag">Troubleshooting</span>
+                    <span class="skill-tag">IT Support</span>
+                    <span class="skill-tag">Cybersecurity</span>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <h5><i class="bi bi-tools me-2"></i>Tools & Platforms</h5>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">Microsoft 365</span>
+                    <span class="skill-tag">Intune</span>
+                    <span class="skill-tag">CoreView</span>
+                    <span class="skill-tag">Cisco</span>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <h5><i class="bi bi-file-earmark-code me-2"></i>Programming</h5>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <h5><i class="bi bi-clipboard-data me-2"></i>Professional Skills</h5>
+                    <span class="skill-tag">Requirements Gathering</span>
+                    <span class="skill-tag">Documentation</span>
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">System Maintenance</span>
+                    <span class="skill-tag">Communication</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>My Projects</h2>
+            <div class="section-line"></div>
+            <p>Some of the projects I have worked on and continue to develop.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- BLOOMHER -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/bloomher.png" alt="BloomHer website preview">
+                    </div>
+
+                    <div class="project-content">
+                        <h5>BloomHer Website</h5>
+                        <p>
+                            A web-based project developed to provide an
+                            online platform for its intended users.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Bootstrap</span>
+                        </div>
+
+                        <button class="project-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#bloomherModal">
+                            <i class="bi bi-images me-1"></i> View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- DODMA -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/dodma.png" alt="DoDMA system preview">
+                    </div>
+
+                    <div class="project-content">
+                        <h5>DoDMA Disaster Management System</h5>
+                        <p>
+                            A system project focused on supporting disaster
+                            management information and processes.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Bootstrap</span>
+                        </div>
+
+                        <button class="project-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#dodmaModal">
+                            <i class="bi bi-images me-1"></i> View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ASSET MANAGEMENT -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/property.png" alt="Asset management system preview">
+                    </div>
+
+                    <div class="project-content">
+                        <h5>Asset Management System</h5>
+                        <p>
+                            A system designed to support the recording,
+                            organisation and management of organisational assets.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+
+                        <button class="project-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#propertyModal">
+                            <i class="bi bi-images me-1"></i> View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- TAK AND TAD RESORT -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="images/resort.png" alt="Tak and Tad Resort website preview">
+                    </div>
+
+                    <div class="project-content">
+                        <h5>Tak & Tad Resort Website</h5>
+                        <p>
+                            A WordPress website project for a resort,
+                            with web content and presentation features.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>WordPress</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>MySQL</span>
+                        </div>
+
+                        <button class="project-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#resortModal">
+                            <i class="bi bi-images me-1"></i> View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ADMISSIONS HUB -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="bi bi-folder-check"></i>
+                            <strong>Admissions Hub</strong>
+                            <div>Project preview coming soon</div>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <h5>Admissions Hub</h5>
+                        <p>
+                            An admissions document review and workflow
+                            management system designed to support application
+                            processing and review stages.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                            <span>CSS</span>
+                        </div>
+
+                        <span class="text-muted small">Screenshots coming soon</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- AURACANDLES -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="bi bi-fire"></i>
+                            <strong>AuraCandles</strong>
+                            <div>Project preview coming soon</div>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <h5>AuraCandles</h5>
+                        <p>
+                            A scented candle business and digital brand project
+                            focused on building a distinctive identity and
+                            customer experience.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>Brand Development</span>
+                            <span>Digital Design</span>
+                            <span>Entrepreneurship</span>
+                        </div>
+
+                        <span class="text-muted small">Screenshots coming soon</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="experience-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Professional Experience</h2>
+            <div class="section-line"></div>
+            <p>My professional journey and practical experience.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+
+                <div class="experience-card">
+                    <span class="date">Current Role</span>
+                    <h5 class="mt-2">Website Developer / Manager</h5>
+                    <h6>BMIS</h6>
+
+                    <ul>
+                        <li>Manage and maintain the organisation's website and digital platforms.</li>
+                        <li>Identify and troubleshoot website and platform issues.</li>
+                        <li>Implement website improvements and updates.</li>
+                        <li>Gather stakeholder requirements and maintain website documentation and content.</li>
+                        <li>Provide support for digital and admissions-related processes.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <span class="date">April 2025 – September 2025</span>
+                    <h5 class="mt-2">IT Specialist Intern</h5>
+                    <h6>Old Mutual Malawi</h6>
+
+                    <ul>
+                        <li>Provided end-user technical support and troubleshooting.</li>
+                        <li>Assisted with information systems maintenance and network support.</li>
+                        <li>Gained practical exposure to Active Directory and Microsoft Intune.</li>
+                        <li>Worked with CoreView compliance monitoring and IT operations.</li>
+                        <li>Gained exposure to server room operations.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <span class="date">December 2024 – February 2025</span>
+                    <h5 class="mt-2">ICT Attachment</h5>
+                    <h6>C-Tech Systems</h6>
+
+                    <ul>
+                        <li>Assisted with technical documentation.</li>
+                        <li>Participated in requirements gathering.</li>
+                        <li>Gained practical exposure to professional ICT environments.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+<section id="education">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Education</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <div class="education-card">
+                    <div class="d-flex align-items-start gap-3">
+
+                        <i class="bi bi-mortarboard-fill fs-1"
+                           style="color: var(--burgundy);"></i>
+
+                        <div>
+                            <h5>
+                                Bachelor of Science in Information and Communication Technology
+                            </h5>
+
+                            <p class="mb-1">Mzuzu University</p>
+                            <p class="text-muted mb-0">Graduated: 15 May 2025</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <div class="section-line"></div>
+
+            <p>
+                Have a project, opportunity or idea you would like to discuss?
+                I would love to hear from you.
+            </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="contact-card">
+                    <i class="bi bi-envelope-fill"></i>
+                    <h5>Email</h5>
+
+                    <p>
+                        <a href="mailto:takondwakaulendo@gmail.com">
+                            takondwakaulendo@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="contact-card">
+                    <i class="bi bi-telephone-fill"></i>
+                    <h5>Phone</h5>
+
+                    <p><a href="tel:+265997230751">+265 997 230 751</a></p>
+                    <p><a href="tel:+265887916417">+265 887 916 417</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="contact-card">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <h5>Location</h5>
+                    <p>Lilongwe, Malawi</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div class="container">
+
+        <p>
+            &copy; <span id="currentYear"></span>
+            Takondwa Jean Kaulendo. All Rights Reserved.
         </p>
-      </div>
+
+        <p class="mt-1">Designed with passion and purpose.</p>
+
     </div>
-  </div>
-</section>
+</footer>
 
 
-  <footer class="text-center text-muted">
-    <div class="container py-3">© <span id="year"></span> Takondwa Jean Kaulendo — Built with care.</div>
-  </footer>
+<!-- =====================================================
+     BLOOMHER IMAGE GALLERY
+===================================================== -->
+<div class="modal fade gallery-modal" id="bloomherModal"
+     tabindex="-1" aria-hidden="true">
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">BloomHer Screenshots</h5>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/bloomher1.png" class="glightbox" data-gallery="bloomher">
+                            <img src="images/bloomher1.png" class="img-fluid rounded gallery-thumbnail" alt="BloomHer screenshot 1">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/bloomher2.png" class="glightbox" data-gallery="bloomher">
+                            <img src="images/bloomher2.png" class="img-fluid rounded gallery-thumbnail" alt="BloomHer screenshot 2">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/bloomher3.png" class="glightbox" data-gallery="bloomher">
+                            <img src="images/bloomher3.png" class="img-fluid rounded gallery-thumbnail" alt="BloomHer screenshot 3">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/bloomher4.png" class="glightbox" data-gallery="bloomher">
+                            <img src="images/bloomher4.png" class="img-fluid rounded gallery-thumbnail" alt="BloomHer screenshot 4">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/bloomher5.png" class="glightbox" data-gallery="bloomher">
+                            <img src="images/bloomher5.png" class="img-fluid rounded gallery-thumbnail" alt="BloomHer screenshot 5">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/bloomher6.png" class="glightbox" data-gallery="bloomher">
+                            <img src="images/bloomher6.png" class="img-fluid rounded gallery-thumbnail" alt="BloomHer screenshot 6">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     DODMA IMAGE GALLERY
+===================================================== -->
+<div class="modal fade gallery-modal" id="dodmaModal"
+     tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">DoDMA Screenshots</h5>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/dodma1.png" class="glightbox" data-gallery="dodma">
+                            <img src="images/dodma1.png" class="img-fluid rounded gallery-thumbnail" alt="DoDMA screenshot 1">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/dodma2.png" class="glightbox" data-gallery="dodma">
+                            <img src="images/dodma2.png" class="img-fluid rounded gallery-thumbnail" alt="DoDMA screenshot 2">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/dodma3.png" class="glightbox" data-gallery="dodma">
+                            <img src="images/dodma3.png" class="img-fluid rounded gallery-thumbnail" alt="DoDMA screenshot 3">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/dodma4.png" class="glightbox" data-gallery="dodma">
+                            <img src="images/dodma4.png" class="img-fluid rounded gallery-thumbnail" alt="DoDMA screenshot 4">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/dodma5.png" class="glightbox" data-gallery="dodma">
+                            <img src="images/dodma5.png" class="img-fluid rounded gallery-thumbnail" alt="DoDMA screenshot 5">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/dodma6.png" class="glightbox" data-gallery="dodma">
+                            <img src="images/dodma6.png" class="img-fluid rounded gallery-thumbnail" alt="DoDMA screenshot 6">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     ASSET MANAGEMENT IMAGE GALLERY
+===================================================== -->
+<div class="modal fade gallery-modal" id="propertyModal"
+     tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Asset Management Screenshots</h5>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/property1.png" class="glightbox" data-gallery="property">
+                            <img src="images/property1.png" class="img-fluid rounded gallery-thumbnail" alt="Asset Management screenshot 1">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/property2.png" class="glightbox" data-gallery="property">
+                            <img src="images/property2.png" class="img-fluid rounded gallery-thumbnail" alt="Asset Management screenshot 2">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/property3.png" class="glightbox" data-gallery="property">
+                            <img src="images/property3.png" class="img-fluid rounded gallery-thumbnail" alt="Asset Management screenshot 3">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/property4.png" class="glightbox" data-gallery="property">
+                            <img src="images/property4.png" class="img-fluid rounded gallery-thumbnail" alt="Asset Management screenshot 4">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/property5.png" class="glightbox" data-gallery="property">
+                            <img src="images/property5.png" class="img-fluid rounded gallery-thumbnail" alt="Asset Management screenshot 5">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/property6.png" class="glightbox" data-gallery="property">
+                            <img src="images/property6.png" class="img-fluid rounded gallery-thumbnail" alt="Asset Management screenshot 6">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     TAK & TAD RESORT IMAGE GALLERY
+===================================================== -->
+<div class="modal fade gallery-modal" id="resortModal"
+     tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Tak & Tad Resort Screenshots</h5>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/resort1.png" class="glightbox" data-gallery="resort">
+                            <img src="images/resort1.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 1">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/resort2.png" class="glightbox" data-gallery="resort">
+                            <img src="images/resort2.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 2">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/resort3.png" class="glightbox" data-gallery="resort">
+                            <img src="images/resort3.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 3">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/resort4.png" class="glightbox" data-gallery="resort">
+                            <img src="images/resort4.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 4">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/resort5.png" class="glightbox" data-gallery="resort">
+                            <img src="images/resort5.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 5">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/resort6.png" class="glightbox" data-gallery="resort">
+                            <img src="images/resort6.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 6">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- GLightbox JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
 <script>
+    // Automatically update copyright year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-  const lightbox = GLightbox({ selector: '.glightbox' });
+    // Initialise GLightbox for all project screenshot galleries
+    const lightbox = GLightbox({
+        selector: '.glightbox',
+        loop: true,
+        touchNavigation: true,
+        zoomable: true
+    });
 
+    // Close mobile navigation when a link is clicked
+    document.querySelectorAll(".navbar .nav-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            const navbar = document.getElementById("mainNavbar");
+
+            if (navbar.classList.contains("show")) {
+                bootstrap.Collapse.getOrCreateInstance(navbar).hide();
+            }
+        });
+    });
 </script>
 
 </body>
-
 </html>
