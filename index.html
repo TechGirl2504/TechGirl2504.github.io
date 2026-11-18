@@ -1,285 +1,1399 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Takondwa Jean Kaulendo — PHP Web Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    :root{--accent:#6c63ff;--muted:#6c757d}
-    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.6;color:#222}
-    .hero{background:#f8f9ff;padding:80px 0;text-align:center}
-    .hero h1{font-weight:700;margin-bottom:0}
-    .lead-tag{color:var(--muted)}
-    .section-title{font-weight:600;margin-bottom:24px}
-    .skill-pill{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid #e9e9ff;margin:6px 6px 6px 0}
-    .project-card img{width:100%;height:180px;object-fit:cover;border-radius:6px}
-    .project-card .card-body{padding:1rem}
-    footer{padding:40px 0}
-    .nav-link{color:#333}
-    .btn-accent{background:var(--accent);border:0;color:#fff}
-    @media(min-width:992px){.hero{padding:110px 0}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Takondwa Jean Kaulendo | ICT Professional & Web Developer</title>
+
+<meta name="description" content="Portfolio of Takondwa Jean Kaulendo, an ICT graduate, web developer and IT systems professional based in Malawi.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* ==============================
+   GLOBAL STYLES
+================================ */
+
+:root {
+    --burgundy: #70263F;
+    --dark-burgundy: #4D172C;
+    --pink: #E9B9C9;
+    --light-pink: #FFF1F5;
+    --soft-white: #FFF9FB;
+    --white: #FFFFFF;
+    --text: #392832;
+    --muted: #82727A;
+    --border: #F0DCE4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    line-height: 1.8;
+    background: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+.section-padding {
+    padding: 85px 0;
+}
+
+.section-heading {
+    color: var(--burgundy);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    color: var(--muted);
+    margin-bottom: 45px;
+}
+
+/* ==============================
+   NAVIGATION
+================================ */
+
+.navbar {
+    background: var(--white);
+    padding: 17px 0;
+    box-shadow: 0 3px 15px rgba(80, 30, 50, 0.07);
+}
+
+.navbar-brand {
+    color: var(--burgundy) !important;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.navbar-brand span {
+    color: var(--pink);
+}
+
+.nav-link {
+    color: var(--text) !important;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--burgundy) !important;
+}
+
+.navbar-toggler {
+    border-color: var(--pink);
+}
+
+/* ==============================
+   HERO SECTION
+================================ */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(120deg, #FFF1F5, #E9B9C9);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-label {
+    color: var(--burgundy);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.hero h1 {
+    color: var(--dark-burgundy);
+    font-size: clamp(35px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 18px 0;
+}
+
+.hero h1 span {
+    color: var(--burgundy);
+}
+
+.hero-description {
+    max-width: 600px;
+    color: #66525B;
+    font-size: 16px;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.btn-primary-custom {
+    background: var(--burgundy);
+    color: var(--white);
+    padding: 13px 28px;
+    border-radius: 30px;
+    border: 1px solid var(--burgundy);
+    display: inline-block;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background: var(--dark-burgundy);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.btn-outline-custom {
+    color: var(--burgundy);
+    border: 1px solid var(--burgundy);
+    padding: 13px 28px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-outline-custom:hover {
+    background: var(--burgundy);
+    color: var(--white);
+}
+
+.hero-image {
+    width: 320px;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 150px 150px 25px 25px;
+    border: 8px solid rgba(255,255,255,0.75);
+    box-shadow: 0 15px 40px rgba(112,38,63,0.15);
+}
+
+/* ==============================
+   ABOUT
+================================ */
+
+#about {
+    background: var(--white);
+}
+
+.about-image {
+    width: 100%;
+    max-width: 380px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.about-content p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.about-highlight {
+    background: var(--light-pink);
+    padding: 20px;
+    border-left: 4px solid var(--burgundy);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* ==============================
+   SERVICES
+================================ */
+
+#services {
+    background: var(--soft-white);
+}
+
+.service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 30px 23px;
+    height: 100%;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(112,38,63,0.10);
+}
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+    background: var(--light-pink);
+    color: var(--burgundy);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.service-card h5 {
+    color: var(--burgundy);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ==============================
+   SKILLS
+================================ */
+
+#skills {
+    background: var(--white);
+}
+
+.skill-category {
+    background: var(--soft-white);
+    padding: 25px;
+    border-radius: 12px;
+    height: 100%;
+    border: 1px solid var(--border);
+}
+
+.skill-category h5 {
+    color: var(--burgundy);
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.skill-pill {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 30px;
+    background: var(--white);
+    border: 1px solid var(--pink);
+    color: var(--burgundy);
+    font-size: 13px;
+    margin: 5px 3px;
+    transition: 0.3s;
+}
+
+.skill-pill:hover {
+    background: var(--burgundy);
+    color: var(--white);
+}
+
+/* ==============================
+   PROJECTS
+================================ */
+
+#projects {
+    background: var(--light-pink);
+}
+
+.project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(112,38,63,0.12);
+}
+
+.project-image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: var(--light-pink);
+}
+
+.project-body {
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 210px);
+}
+
+.project-card h5 {
+    color: var(--burgundy);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.project-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.project-tech {
+    color: var(--burgundy);
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: auto;
+}
+
+.project-link {
+    color: var(--burgundy);
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.project-link:hover {
+    color: var(--dark-burgundy);
+}
+
+/* ==============================
+   EXPERIENCE
+================================ */
+
+#experience {
+    background: var(--white);
+}
+
+.timeline {
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+    border-left: 3px solid var(--pink);
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+    background: var(--soft-white);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -41px;
+    top: 27px;
+    width: 17px;
+    height: 17px;
+    background: var(--burgundy);
+    border: 4px solid var(--pink);
+    border-radius: 50%;
+}
+
+.timeline-item h5 {
+    color: var(--burgundy);
+    font-weight: 700;
+}
+
+.timeline-date {
+    color: var(--burgundy);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.timeline-item p,
+.timeline-item li {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ==============================
+   EDUCATION
+================================ */
+
+#education {
+    background: var(--soft-white);
+}
+
+.education-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+.education-card h5 {
+    color: var(--burgundy);
+    font-weight: 700;
+}
+
+/* ==============================
+   CONTACT
+================================ */
+
+#contact {
+    background: var(--dark-burgundy);
+    color: var(--white);
+}
+
+#contact .section-heading {
+    color: var(--pink);
+}
+
+#contact .section-subtitle {
+    color: #E8CDD7;
+}
+
+.contact-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 22px;
+    height: 100%;
+}
+
+.contact-card h6 {
+    color: var(--pink);
+    font-weight: 600;
+}
+
+.contact-card a {
+    color: var(--white);
+    font-size: 14px;
+    word-break: break-word;
+}
+
+.contact-card a:hover {
+    color: var(--pink);
+}
+
+/* ==============================
+   FOOTER
+================================ */
+
+footer {
+    background: #35101F;
+    color: #E8CDD7;
+    padding: 22px 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* ==============================
+   RESPONSIVENESS
+================================ */
+
+@media(max-width: 768px) {
+
+    .hero {
+        text-align: center;
+        padding: 75px 0;
+    }
+
+    .hero-description {
+        margin: auto;
+    }
+
+    .hero-image {
+        width: 250px;
+        height: 290px;
+        margin-top: 45px;
+    }
+
+    .btn-outline-custom {
+        margin: 12px 0 0;
+    }
+
+    .section-padding {
+        padding: 65px 0;
+    }
+
+    .timeline {
+        margin-left: 10px;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">MY PORTFOLIO</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container">
-      <h1>Takondwa Jean Kaulendo</h1>
-      <p class="lead lead-tag">PHP Web Developer</p>
-      <p class="mx-auto" style="max-width:700px">I build responsive, accessible websites and web applications with a focus on clean code and practical solutions.</p>
-      <a href="#projects" class="btn btn-accent btn-lg mt-3">View Projects</a>
-    </div>
-  </header>
+<!-- ==============================
+     NAVIGATION
+================================ -->
 
-  <!-- ABOUT -->
-  <section id="about" class="container my-5">
-    <div class="row align-items-center">
-      <div class="col-md-4 text-center mb-4 mb-md-0">
-        <div style="width:220px;height:220px;background:#eef;display:inline-block;border-radius:8px;overflow:hidden;">
-          <img src="images/profile.jpg" alt="Takondwa Jean" style="width:100%;height:100%;object-fit:cover">
-        </div>
-      </div>
-      <div class="col-md-8">
-        <h2 class="section-title">About Me</h2>
-      <p><strong>Takondwa J. Kaulendo</strong> – Lilongwe, Malawi.</p>
-      <p>I am a motivated ICT graduate from Mzuzu University with hands-on experience in web development, network support, and IT systems management. I enjoy building responsive websites and solving technical challenges efficiently.</p>
-      <p>I have gained practical experience at C-Tech Systems Ltd and Old Mutual Malawi, assisting in web projects, system administration, and end-user support. I bring strong communication, teamwork, and problem-solving skills to every project.</p>
-   </div>
-    </div>
-  </section>
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
 
-  <!-- SKILLS -->
-  <section id="skills" class="bg-light py-5">
-    <div class="container">
-      <h3 class="section-title text-center">Skills</h3>
-      <div class="text-center mb-3">
-        <span class="skill-pill">HTML</span>
-        <span class="skill-pill">CSS</span>
-        <span class="skill-pill">JavaScript</span>
-        <span class="skill-pill">Bootstrap</span>
-        <span class="skill-pill">PHP</span>
-        <span class="skill-pill">MySQL</span>
-        <span class="skill-pill">GitHub</span>
-        <span class="skill-pill">VS Code</span>
-        <span class="skill-pill">XAMPP</span>
-        <span class="skill-pill">Wordpress</span>
-      </div>
-      <ul class="text-center text-muted" style="list-style:none; padding:0; margin:0; text-align:center;">
-          <li><strong>1. Front-end:</strong> HTML, CSS, JavaScript, Bootstrap</li>
-          <li><strong>2. Back-end:</strong> PHP, MySQL</li>
-          <li><strong>3. Tools:</strong> GitHub, VS Code, XAMPP, WordPress</li>
-      </ul>
+<a class="navbar-brand" href="#home">
+TJK<span>.</span>
+</a>
+
+<button class="navbar-toggler" type="button"
+data-bs-toggle="collapse" data-bs-target="#navMenu"
+aria-controls="navMenu" aria-expanded="false"
+aria-label="Toggle navigation">
+
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="#home">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#about">About</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#services">What I Do</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#skills">Skills</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#projects">Projects</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#experience">Experience</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
+
+</ul>
+</div>
+</div>
+</nav>
 
 
-  </section>
+<!-- ==============================
+     HERO
+================================ -->
 
-<!-- PROJECTS -->
-<section id="projects" class="container my-5">
-  <h3 class="section-title text-center">My Projects</h3>
-  <div class="row g-4">
+<header class="hero" id="home">
 
-    <!-- Project 1 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card project-card h-100 shadow-sm">
-        <img src="images/bloomher.png" alt="BloomHer project">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title"><strong>BloomHer Website</strong></h5>
-          <p class="card-text">A responsive website designed to empower and inspire young girls through education and lifestyle programs. It features an admin panel for managing content, and a visitor site where users can view programs, apply as volunteers, and contact the organization.</p>
-          <p class="mt-auto mb-0"><strong>Tech:</strong> PHP, MySQL, HTML, CSS, Bootstrap</p>
-          <div class="mt-3">
-            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#bloomherModal">View Screenshots</button>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="container">
 
-    <!-- Project 2 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card project-card h-100 shadow-sm">
-        <img src="images/dodma.png" alt="Disaster Management project">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title"><strong>Disaster Management System (DoDMA)</strong></h5>
-          <p class="card-text">A data-driven system built to support disaster response operations. It helps field teams collect household-level data, track affected families, and manage inventory distribution efficiently.</p>
-          <p class="mt-auto mb-0"><strong>Tech:</strong> PHP, MySQL, HTML, CSS, Bootstrap</p>
-          <div class="mt-3">
-            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#dodmaModal">View Screenshots</button>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="row align-items-center">
 
-    <!-- Project 3 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card project-card h-100 shadow-sm">
-        <img src="images/property.png" alt="Property Management">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title"><strong>Asset Management System</strong></h5>
-          <p class="card-text">A web application that enables users to add procured items, allocate them to departments, and allows departmental personnel to assign assets to individual staff members for accountability and tracking.</p>
-          <p class="mt-auto mb-0"><strong>Tech:</strong> PHP, MySQL, HTML, CSS</p>
-          <div class="mt-3">
-            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#propertyModal">View Screenshots</button>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="col-lg-7">
 
-  </div>
+<p class="hero-label">Welcome to my portfolio</p>
 
-  <!-- Project 4 -->
-  <div class="col-md-6 col-lg-4 mt-4">
-    <div class="card project-card h-100 shadow-sm">
-      <img src="images/resort.png" alt="Tak&Tad Resort">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title"><strong>Tak&Tad Resort Website</strong></h5>
-        <p class="card-text">A dynamic WordPress website designed to showcase a resort’s services and facilities. It features a gallery, contact form, and an engaging layout to enhance visitor experience and attract customers.</p>
-        <p class="mt-auto mb-0"><strong>Tech:</strong> WordPress, HTML, CSS, MySQL</p>
-        <div class="mt-3">
-          <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#resortModal">View Screenshots</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<h1>
+Hello, I'm <br>
+<span>Takondwa Jean Kaulendo</span>
+</h1>
 
-  <!-- MODALS -->
- <!-- BloomHer Modal -->
-<div class="modal fade" id="bloomherModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">BloomHer Screenshots</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-2">
-          <div class="col-4"><a href="images/bloomher1.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher1.png" class="img-fluid rounded" alt="BloomHer 1"></a></div>
-          <div class="col-4"><a href="images/bloomher2.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher2.png" class="img-fluid rounded" alt="BloomHer 2"></a></div>
-          <div class="col-4"><a href="images/bloomher3.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher3.png" class="img-fluid rounded" alt="BloomHer 3"></a></div>
-          <div class="col-4"><a href="images/bloomher4.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher4.png" class="img-fluid rounded" alt="BloomHer 4"></a></div>
-          <div class="col-4"><a href="images/bloomher5.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher5.png" class="img-fluid rounded" alt="BloomHer 5"></a></div>
-          <div class="col-4"><a href="images/bloomher6.png" class="glightbox" data-gallery="bloomher"><img src="images/bloomher6.png" class="img-fluid rounded" alt="BloomHer 6"></a></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<p class="hero-description">
+An ICT graduate, web developer and IT professional
+passionate about technology, digital transformation
+and building practical solutions that make a difference.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn-primary-custom">
+Explore My Work
+</a>
+
+<a href="#contact" class="btn-outline-custom">
+Let's Connect
+</a>
+
 </div>
 
-<!-- DoDMA Modal -->
-<div class="modal fade" id="dodmaModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">DoDMA Screenshots</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-2">
-          <div class="col-4"><a href="images/dodma1.png" class="glightbox" data-gallery="dodma"><img src="images/dodma1.png" class="img-fluid rounded" alt="DoDMA 1"></a></div>
-          <div class="col-4"><a href="images/dodma2.png" class="glightbox" data-gallery="dodma"><img src="images/dodma2.png" class="img-fluid rounded" alt="DoDMA 2"></a></div>
-          <div class="col-4"><a href="images/dodma3.png" class="glightbox" data-gallery="dodma"><img src="images/dodma3.png" class="img-fluid rounded" alt="DoDMA 3"></a></div>
-          <div class="col-4"><a href="images/dodma4.png" class="glightbox" data-gallery="dodma"><img src="images/dodma4.png" class="img-fluid rounded" alt="DoDMA 4"></a></div>
-          <div class="col-4"><a href="images/dodma5.png" class="glightbox" data-gallery="dodma"><img src="images/dodma5.png" class="img-fluid rounded" alt="DoDMA 5"></a></div>
-          <div class="col-4"><a href="images/dodma6.png" class="glightbox" data-gallery="dodma"><img src="images/dodma6.png" class="img-fluid rounded" alt="DoDMA 6"></a></div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
-<!-- Asset Management Modal -->
-<div class="modal fade" id="propertyModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Asset Management Screenshots</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-2">
-          <div class="col-4"><a href="images/property1.png" class="glightbox" data-gallery="property"><img src="images/property1.png" class="img-fluid rounded" alt="Property 1"></a></div>
-          <div class="col-4"><a href="images/property2.png" class="glightbox" data-gallery="property"><img src="images/property2.png" class="img-fluid rounded" alt="Property 2"></a></div>
-          <div class="col-4"><a href="images/property3.png" class="glightbox" data-gallery="property"><img src="images/property3.png" class="img-fluid rounded" alt="Property 3"></a></div>
-          <div class="col-4"><a href="images/property4.png" class="glightbox" data-gallery="property"><img src="images/property4.png" class="img-fluid rounded" alt="Property 4"></a></div>
-          <div class="col-4"><a href="images/property5.png" class="glightbox" data-gallery="property"><img src="images/property5.png" class="img-fluid rounded" alt="Property 5"></a></div>
-          <div class="col-4"><a href="images/property6.png" class="glightbox" data-gallery="property"><img src="images/property6.png" class="img-fluid rounded" alt="Property 6"></a></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="col-lg-5 text-center">
+
+<img src="images/profile.jpg"
+alt="Takondwa Jean Kaulendo"
+class="hero-image">
+
 </div>
 
-<!-- Tak&Tad Resort Modal -->
-<div class="modal fade" id="resortModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Tak&Tad Resort Screenshots</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-2">
-          <div class="col-4"><a href="images/resort1.png" class="glightbox" data-gallery="resort"><img src="images/resort1.png" class="img-fluid rounded" alt="Resort 1"></a></div>
-          <div class="col-4"><a href="images/resort2.png" class="glightbox" data-gallery="resort"><img src="images/resort2.png" class="img-fluid rounded" alt="Resort 2"></a></div>
-          <div class="col-4"><a href="images/resort3.png" class="glightbox" data-gallery="resort"><img src="images/resort3.png" class="img-fluid rounded" alt="Resort 3"></a></div>
-          <div class="col-4"><a href="images/resort4.png" class="glightbox" data-gallery="resort"><img src="images/resort4.png" class="img-fluid rounded" alt="Resort 4"></a></div>
-          <div class="col-4"><a href="images/resort5.png" class="glightbox" data-gallery="resort"><img src="images/resort5.png" class="img-fluid rounded" alt="Resort 5"></a></div>
-          <div class="col-4"><a href="images/resort6.png" class="glightbox" data-gallery="resort"><img src="images/resort6.png" class="img-fluid rounded" alt="Resort 6"></a></div>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</header>
+
+
+<!-- ==============================
+     ABOUT ME
+================================ -->
+
+<section id="about" class="section-padding">
+
+<div class="container">
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-5 text-center">
+
+<img src="images/profile.jpg"
+alt="Takondwa Jean Kaulendo"
+class="about-image">
+
 </div>
 
-<!-- CONTACT -->
-<section id="contact" class="bg-dark text-white py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6 text-center">
-        <h3 class="section-title">Get in touch</h3>
-        <p>If you'd like to work together or invite me for an interview, please send an email, connect on GitHub/LinkedIn, or call me.</p>
-        <p class="mb-1"><strong>Email:</strong> <a id="emailLink" href="mailto:takondwakaulendo@gmail.com" class="text-white">takondwakaulendo@gmail.com</a></p>
-        <p class="mb-1"><strong>Phone:</strong> +265 997 230 751 | +265 887 916 417 </p>
-        <p class="mb-0">
-          <a id="githubLink" href="#" class="text-white">GitHub</a>
-        </p>
-      </div>
-    </div>
-  </div>
+<div class="col-lg-7 about-content">
+
+<p class="hero-label">Get to know me</p>
+
+<h2 class="section-heading">About Me</h2>
+
+<p>
+I am <strong>Takondwa Jean Kaulendo</strong>, an ICT graduate
+from Mzuzu University, Malawi, with practical experience
+in web development, IT systems management, technical
+support and digital solutions.
+</p>
+
+<p>
+My professional interests revolve around technology,
+systems development, cybersecurity, data management
+and digital transformation. I enjoy identifying problems,
+understanding user requirements and translating ideas
+into functional technology solutions.
+</p>
+
+<p>
+Throughout my professional journey, I have gained
+experience in website management, system maintenance,
+network troubleshooting, documentation, requirements
+gathering and end-user support.
+</p>
+
+<p>
+I am continuously learning, exploring new technologies
+and developing solutions that contribute to organisational
+growth and efficiency.
+</p>
+
+<div class="about-highlight">
+
+<strong style="color:#70263F;">
+My Philosophy
+</strong>
+
+<p class="mb-0 mt-2">
+Technology is more than writing code. It is about
+understanding problems, creating solutions and making
+a meaningful impact.
+</p>
+
+</div>
+
+</div>
+</div>
+</div>
 </section>
 
 
-  <footer class="text-center text-muted">
-    <div class="container py-3">© <span id="year"></span> Takondwa Jean Kaulendo — Built with care.</div>
-  </footer>
+<!-- ==============================
+     WHAT I DO
+================================ -->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<section id="services" class="section-padding">
+
+<div class="container">
+
+<div class="text-center">
+
+<h2 class="section-heading">What I Do</h2>
+
+<p class="section-subtitle">
+Areas where I apply my knowledge and technical skills.
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-3">
+
+<div class="service-card">
+
+<div class="service-icon">💻</div>
+
+<h5>Web Development</h5>
+
+<p>
+Designing and developing responsive websites
+and dynamic web applications using modern
+web technologies.
+</p>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="service-card">
+
+<div class="service-icon">⚙️</div>
+
+<h5>Systems Development</h5>
+
+<p>
+Developing practical information systems,
+managing databases and improving existing
+business processes.
+</p>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="service-card">
+
+<div class="service-icon">🖥️</div>
+
+<h5>IT Support</h5>
+
+<p>
+Technical troubleshooting, network support,
+system maintenance and end-user assistance.
+</p>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="service-card">
+
+<div class="service-icon">🔐</div>
+
+<h5>Technology & Security</h5>
+
+<p>
+Exploring cybersecurity, information systems
+management and digital transformation.
+</p>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ==============================
+     SKILLS
+================================ -->
+
+<section id="skills" class="section-padding">
+
+<div class="container">
+
+<div class="text-center">
+
+<h2 class="section-heading">Technical Skills</h2>
+
+<p class="section-subtitle">
+Technologies, tools and platforms I work with.
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6">
+
+<div class="skill-category">
+
+<h5>Front-end Development</h5>
+
+<span class="skill-pill">HTML5</span>
+<span class="skill-pill">CSS3</span>
+<span class="skill-pill">JavaScript</span>
+<span class="skill-pill">Bootstrap</span>
+
+</div>
+</div>
+
+<div class="col-md-6">
+
+<div class="skill-category">
+
+<h5>Back-end Development</h5>
+
+<span class="skill-pill">PHP</span>
+<span class="skill-pill">Laravel</span>
+<span class="skill-pill">Python</span>
+<span class="skill-pill">MySQL</span>
+<span class="skill-pill">MariaDB</span>
+
+</div>
+</div>
+
+<div class="col-md-6">
+
+<div class="skill-category">
+
+<h5>Systems & IT Support</h5>
+
+<span class="skill-pill">Windows</span>
+<span class="skill-pill">Active Directory</span>
+<span class="skill-pill">Microsoft Intune</span>
+<span class="skill-pill">Network Troubleshooting</span>
+<span class="skill-pill">System Maintenance</span>
+
+</div>
+</div>
+
+<div class="col-md-6">
+
+<div class="skill-category">
+
+<h5>Development Tools & Platforms</h5>
+
+<span class="skill-pill">GitHub</span>
+<span class="skill-pill">VS Code</span>
+<span class="skill-pill">XAMPP</span>
+<span class="skill-pill">WordPress</span>
+<span class="skill-pill">Microsoft Office</span>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ==============================
+     PROJECTS
+================================ -->
+
+<section id="projects" class="section-padding">
+
+<div class="container">
+
+<div class="text-center">
+
+<h2 class="section-heading">My Projects</h2>
+
+<p class="section-subtitle">
+A selection of systems, websites and digital solutions
+I have worked on.
+</p>
+
+</div>
+
+<div class="row g-4">
+
+
+<!-- PROJECT 1 -->
+
+<div class="col-md-6 col-lg-4">
+
+<div class="project-card">
+
+<a href="images/bloomher.png" target="_blank">
+<img src="images/bloomher.png"
+class="project-image"
+alt="BloomHer Website">
+</a>
+
+<div class="project-body">
+
+<h5>BloomHer Website</h5>
+
+<p>
+A responsive website designed to empower and inspire
+young girls through education and lifestyle programmes.
+Includes an administration panel, content management,
+volunteer applications and contact features.
+</p>
+
+<div class="project-tech">
+PHP | MySQL | HTML | CSS | Bootstrap
+</div>
+
+<a href="images/bloomher.png" target="_blank"
+class="project-link">View Project Screenshot →</a>
+
+</div>
+</div>
+</div>
+
+
+<!-- PROJECT 2 -->
+
+<div class="col-md-6 col-lg-4">
+
+<div class="project-card">
+
+<a href="images/dodma.png" target="_blank">
+<img src="images/dodma.png"
+class="project-image"
+alt="DoDMA Disaster Management System">
+</a>
+
+<div class="project-body">
+
+<h5>Disaster Management System</h5>
+
+<p>
+A data-driven system designed to support disaster
+response operations, household data collection,
+tracking affected families and inventory distribution.
+</p>
+
+<div class="project-tech">
+PHP | MySQL | HTML | CSS | Bootstrap
+</div>
+
+<a href="images/dodma.png" target="_blank"
+class="project-link">View Project Screenshot →</a>
+
+</div>
+</div>
+</div>
+
+
+<!-- PROJECT 3 -->
+
+<div class="col-md-6 col-lg-4">
+
+<div class="project-card">
+
+<a href="images/property.png" target="_blank">
+<img src="images/property.png"
+class="project-image"
+alt="Asset Management System">
+</a>
+
+<div class="project-body">
+
+<h5>Asset Management System</h5>
+
+<p>
+A web application for managing procured assets,
+allocating items to departments and assigning
+equipment to individual staff members for
+accountability and tracking.
+</p>
+
+<div class="project-tech">
+PHP | MySQL | HTML | CSS
+</div>
+
+<a href="images/property.png" target="_blank"
+class="project-link">View Project Screenshot →</a>
+
+</div>
+</div>
+</div>
+
+
+<!-- PROJECT 4 -->
+
+<div class="col-md-6 col-lg-4">
+
+<div class="project-card">
+
+<a href="images/resort.png" target="_blank">
+<img src="images/resort.png"
+class="project-image"
+alt="Tak and Tad Resort Website">
+</a>
+
+<div class="project-body">
+
+<h5>Tak&Tad Resort Website</h5>
+
+<p>
+A dynamic WordPress website showcasing resort
+services and facilities, featuring a gallery,
+contact form and engaging visitor experience.
+</p>
+
+<div class="project-tech">
+WordPress | HTML | CSS | MySQL
+</div>
+
+<a href="images/resort.png" target="_blank"
+class="project-link">View Project Screenshot →</a>
+
+</div>
+</div>
+</div>
+
+
+<!-- PROJECT 5 -->
+
+<div class="col-md-6 col-lg-4">
+
+<div class="project-card">
+
+<a href="images/admissions-hub.png" target="_blank">
+<img src="images/admissions-hub.png"
+class="project-image"
+alt="Admissions Hub System">
+</a>
+
+<div class="project-body">
+
+<h5>Admissions Hub</h5>
+
+<p>
+An admissions workflow management system designed
+to streamline applicant registration, document
+review, feedback, principal assessment and
+application tracking.
+</p>
+
+<div class="project-tech">
+PHP | MySQL | HTML | CSS | Bootstrap
+</div>
+
+<a href="images/admissions-hub.png" target="_blank"
+class="project-link">View Project Screenshot →</a>
+
+</div>
+</div>
+</div>
+
+
+<!-- PROJECT 6 -->
+
+<div class="col-md-6 col-lg-4">
+
+<div class="project-card">
+
+<a href="images/aura-candles.png" target="_blank">
+<img src="images/aura-candles.png"
+class="project-image"
+alt="AuraCandles Management Project">
+</a>
+
+<div class="project-body">
+
+<h5>AuraCandles Digital Project</h5>
+
+<p>
+A digital business project focused on building
+an online presence and developing management
+solutions for a scented candle business.
+</p>
+
+<div class="project-tech">
+PHP | MySQL | HTML | CSS | Bootstrap
+</div>
+
+<a href="images/aura-candles.png" target="_blank"
+class="project-link">View Project Screenshot →</a>
+
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</section>
+
+
+<!-- ==============================
+     EXPERIENCE
+================================ -->
+
+<section id="experience" class="section-padding">
+
+<div class="container">
+
+<div class="text-center">
+
+<h2 class="section-heading">Professional Experience</h2>
+
+<p class="section-subtitle">
+My professional journey and practical experience.
+</p>
+
+</div>
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+<span class="timeline-date">CURRENT ROLE</span>
+
+<h5>BMIS – Website Developer / Manager</h5>
+
+<p>
+Responsible for website and digital platform
+management, technical troubleshooting,
+maintenance, improvements and content updates.
+</p>
+
+<ul>
+<li>Website maintenance and platform improvements.</li>
+<li>Managing website content and digital resources.</li>
+<li>Understanding stakeholder requirements.</li>
+<li>Technical troubleshooting and documentation.</li>
+</ul>
+
+</div>
+
+
+<div class="timeline-item">
+
+<span class="timeline-date">APRIL 2025 – SEPTEMBER 2025</span>
+
+<h5>Old Mutual Malawi – IT Specialist Intern</h5>
+
+<p>
+Gained practical experience in IT operations,
+end-user support and information systems maintenance.
+</p>
+
+<ul>
+<li>Provided technical assistance to end users.</li>
+<li>Supported network and systems maintenance.</li>
+<li>Worked with Active Directory and Microsoft Intune.</li>
+<li>Assisted with IT compliance and technical operations.</li>
+</ul>
+
+</div>
+
+
+<div class="timeline-item">
+
+<span class="timeline-date">DECEMBER 2024 – FEBRUARY 2025</span>
+
+<h5>C-Tech Systems Ltd – ICT Attachment</h5>
+
+<p>
+Participated in practical ICT activities with a focus
+on system documentation and requirements gathering.
+</p>
+
+<ul>
+<li>Assisted with documentation.</li>
+<li>Participated in requirements gathering.</li>
+<li>Supported ICT project activities.</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ==============================
+     EDUCATION
+================================ -->
+
+<section id="education" class="section-padding">
+
+<div class="container">
+
+<div class="text-center">
+
+<h2 class="section-heading">Education</h2>
+
+<p class="section-subtitle">
+My academic background.
+</p>
+
+</div>
+
+<div class="row justify-content-center">
+
+<div class="col-lg-7">
+
+<div class="education-card">
+
+<div class="service-icon mx-auto">🎓</div>
+
+<h5>Bachelor of Science in Information and Communication Technology</h5>
+
+<p class="mb-1">
+<strong>Mzuzu University</strong>
+</p>
+
+<p class="text-muted mb-0">
+Graduated: 15 May 2025
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- ==============================
+     CONTACT
+================================ -->
+
+<section id="contact" class="section-padding">
+
+<div class="container">
+
+<div class="text-center">
+
+<h2 class="section-heading">Let's Connect</h2>
+
+<p class="section-subtitle">
+Have a project, opportunity or idea?
+I would love to hear from you.
+</p>
+
+</div>
+
+<div class="row g-4 justify-content-center">
+
+<div class="col-md-4">
+
+<div class="contact-card text-center">
+
+<h6>Email</h6>
+
+<a href="mailto:takondwakaulendo@gmail.com">
+takondwakaulendo@gmail.com
+</a>
+
+</div>
+</div>
+
+<div class="col-md-4">
+
+<div class="contact-card text-center">
+
+<h6>Phone</h6>
+
+<a href="tel:+265997230751">
++265 997 230 751
+</a>
+
+<br>
+
+<a href="tel:+265887916417">
++265 887 916 417
+</a>
+
+</div>
+</div>
+
+<div class="col-md-4">
+
+<div class="contact-card text-center">
+
+<h6>GitHub</h6>
+
+<a href="https://github.com/"
+target="_blank" rel="noopener noreferrer">
+Visit GitHub Profile
+</a>
+
+</div>
+</div>
+
+</div>
+
+<div class="text-center mt-5">
+
+<a href="mailto:takondwakaulendo@gmail.com"
+class="btn-primary-custom">
+Send Me an Email
+</a>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ==============================
+     FOOTER
+================================ -->
+
+<footer>
+
+<div class="container">
+
+<p class="mb-1">
+© <span id="year"></span> Takondwa Jean Kaulendo.
+All Rights Reserved.
+</p>
+
+<p class="mb-0">
+Designed with purpose, creativity and passion.
+</p>
+
+</div>
+
+</footer>
+
+
+<!-- BOOTSTRAP JAVASCRIPT -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-  const lightbox = GLightbox({ selector: '.glightbox' });
+
+// Automatic copyright year
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+// Close mobile navigation after clicking a link
+
+document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        const menu = document.getElementById("navMenu");
+
+        const bsCollapse = bootstrap.Collapse.getInstance(menu);
+
+        if (bsCollapse) {
+            bsCollapse.hide();
+        }
+
+    });
+
+});
+
 </script>
+
 </body>
 </html>
-
-
-
