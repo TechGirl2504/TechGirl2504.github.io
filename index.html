@@ -963,17 +963,12 @@
                 </div>
             </div>
 
-
-            <!-- ADMISSIONS HUB -->
+            <!-- ADMISSIONS HUB -->           
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
 
                     <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="bi bi-folder-check"></i>
-                            <strong>Admissions Hub</strong>
-                            <div>Project preview coming soon</div>
-                        </div>
+                        <img src="images/admission.png" alt="Admissions Hub website app preview">
                     </div>
 
                     <div class="project-content">
@@ -986,31 +981,30 @@
 
                         <div class="project-tech">
                             <span>PHP</span>
-                            <span>MySQL</span>
                             <span>Bootstrap</span>
                             <span>CSS</span>
+                            <span>MySQL</span>
                         </div>
 
-                        <span class="text-muted small">Screenshots coming soon</span>
+                        <button class="project-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#resortModal">
+                            <i class="bi bi-images me-1"></i> View Project
+                        </button>
                     </div>
                 </div>
             </div>
-
 
             <!-- AURACANDLES -->
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
 
                     <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="bi bi-fire"></i>
-                            <strong>AuraCandles</strong>
-                            <div>Project preview coming soon</div>
-                        </div>
+                        <img src="images/aura.png" alt="Aura Candles website preview">
                     </div>
 
                     <div class="project-content">
-                        <h5>AuraCandles</h5>
+                        <h5>Aura Candles Hub</h5>
                         <p>
                             A scented candle business and digital brand project
                             focused on building a distinctive identity and
@@ -1018,18 +1012,20 @@
                         </p>
 
                         <div class="project-tech">
-                            <span>Brand Development</span>
-                            <span>Digital Design</span>
-                            <span>Entrepreneurship</span>
+                            <span>Laravel</span>
+                            <span>Filament</span>
+                            <span>Js</span>
+                            <span>MySQL</span>
                         </div>
 
-                        <span class="text-muted small">Screenshots coming soon</span>
+                        <button class="project-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#resortModal">
+                            <i class="bi bi-images me-1"></i> View Project
+                        </button>
                     </div>
                 </div>
             </div>
-
-        </div>
-    </div>
 </section>
 
 
@@ -1441,7 +1437,126 @@
         </div>
     </div>
 </div>
+<!-- =====================================================
+     ADMISSION HUB IMAGE GALLERY
+===================================================== -->
+<div class="modal fade gallery-modal" id="AdmissionModal"
+     tabindex="-1" aria-hidden="true">
 
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Admission Hub Screenshots</h5>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/admission1.png" class="glightbox" data-gallery="resort">
+                            <img src="images/admission1.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 1">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/admission2.png" class="glightbox" data-gallery="resort">
+                            <img src="images/admission2.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 2">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/admission3.png" class="glightbox" data-gallery="resort">
+                            <img src="images/admission3.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 3">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/admission4.png" class="glightbox" data-gallery="resort">
+                            <img src="images/admission4.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 4">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/admission5.png" class="glightbox" data-gallery="resort">
+                            <img src="images/admission5.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 5">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/admission6.png" class="glightbox" data-gallery="resort">
+                            <img src="images/admission6.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 6">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- =====================================================
+     Aura Candles IMAGE GALLERY
+===================================================== -->
+<div class="modal fade gallery-modal" id="auracandlesModal"
+     tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Aura Candles Screenshots</h5>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/aura1.png" class="glightbox" data-gallery="resort">
+                            <img src="images/aura1.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 1">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/aura2.png" class="glightbox" data-gallery="resort">
+                            <img src="images/aura2.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 2">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/aura3.png" class="glightbox" data-gallery="resort">
+                            <img src="images/aura3.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 3">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/aura4.png" class="glightbox" data-gallery="resort">
+                            <img src="images/aura4.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 4">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/aura5.png" class="glightbox" data-gallery="resort">
+                            <img src="images/aura5.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 5">
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <a href="images/aura6.png" class="glightbox" data-gallery="resort">
+                            <img src="images/aura6.png" class="img-fluid rounded gallery-thumbnail" alt="Resort screenshot 6">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- ================= JAVASCRIPT ================= -->
 
